@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/qcxy.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="mui-content">
+		</div>
+		<nav class="mui-bar mui-bar-tab nav_bottom" id="nav1">
+			<a class="mui-tab-item mui-active" id="index">
+				<span class="mui-icon"><img src="imgs/index.png" style="width:23px;"/></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" id="hot">
+				<span class="mui-icon"><img src="imgs/hot3.png" style="width:23px;"/></span>
+				<span class="mui-tab-label">热点</span>
+			</a>
+			<a class="mui-tab-item" id="column">
+				<span class="mui-icon"><img src="imgs/column.png" style="width:23px;"/></span>
+				<span class="mui-tab-label">专栏</span>
+			</a>
+			<a class="mui-tab-item" id="user">
+				<span class="mui-icon"><img src="imgs/stu.png" style="width:22px;"/></span>
+				<span class="mui-tab-label">未登录</span>
+			</a>
+		</nav>
+		<script type="text/javascript" charset="utf-8">
+			mui.init({
+				subpages: [ //先加载首页  
+					{
+						url: 'html/index.html',
+						id: 'index',
+						styles: {
+							top: '0px',
+							bottom: '50px'
+						}
+					}
+				],
+				preloadPages: [ //缓存其他页面  
+					{
+						url: 'html/hot.html',
+						id: 'hot',
+						styles: {
+							top: '0px',
+							bottom: '50px'
+						}
+					},
+					{
+						url: 'html/column.html',
+						id: 'column',
+						styles: {
+							top: '0px',
+							bottom: '50px'
+						}
+					},
+					{
+						url: 'html/user.html',
+						id: 'user',
+						styles: {
+							top: '0px',
+							bottom: '50px'
+						}
+					}
+				]
+			});
+			mui('.mui-scroll-wrapper').scroll({
+				deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+			});
+			document.addEventListener('plusready', function() {
+				//js代码
+				var index = plus.webview.getWebviewById('index');
+				var hot = plus.webview.getWebviewById('hot');
+				var column = plus.webview.getWebviewById('column');
+				var user = plus.webview.getWebviewById('user');
+				mui("#nav1").on("tap", "#index", function() { //点击触发   
+					if(index == undefined) {
+						index = mui.preload({
+							url: 'html/index.html',
+							id: 'index', //默认使用当前页面的url作为id
+							styles: {}, //窗口参数
+							extras: {} //自定义扩展参数
+						});
+					}
+					index.show();
+					user.hide() //这一步必须有  
+					hot.hide() //这一步必须有  
+					column.hide() //这一步必须有  
+				});
+				mui("#nav1").on("tap", "#hot", function() { //点击触发  
+					if(hot == undefined) {
+						hot = mui.preload({
+							url: 'html/hot.html',
+							id: 'hot', //默认使用当前页面的url作为id
+							styles: {}, //窗口参数
+							extras: {} //自定义扩展参数
+						});
+					}
+					hot.show()
+				});
+				mui("#nav1").on("tap", "#column", function() { //点击触发  
+					if(column == undefined) {
+						column = mui.preload({
+							url: 'column/hot.html',
+							id: 'column', //默认使用当前页面的url作为id
+							styles: {}, //窗口参数
+							extras: {} //自定义扩展参数
+						});
+					}
+					column.show()
+				});
+				mui("#nav1").on("tap", "#user", function() { //点击触发
+					if(user == undefined) {
+						user = mui.preload({
+							url: 'user/hot.html',
+							id: 'user', //默认使用当前页面的url作为id
+							styles: {}, //窗口参数
+							extras: {} //自定义扩展参数
+						});
+					}
+					user.show()
+				});
+				//设置状态栏颜色
+				plus.navigator.setStatusBarBackground('white');
+			}, false);
+		</script>
+	</body>
+
+</html>

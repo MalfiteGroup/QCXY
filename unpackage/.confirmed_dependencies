@@ -1,0 +1,19 @@
+{
+  "index.html": {
+    "refer": [
+      "html/content.html",
+      "html/hot.html",
+      "html/user.html",
+      "html/column.html",
+      "html/index.html"
+    ],
+    "resources": [
+      "html/index.html"
+    ]
+  },
+  "html/index.html": {
+    "refer": [
+      "html/content.html"
+    ]
+  }
+}

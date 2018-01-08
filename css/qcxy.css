@@ -1,0 +1,160 @@
+			* {
+				margin:0;
+				padding:0;
+				font-family: "微软雅黑";
+				background-color: rgb(255, 255, 255);
+			}
+			.head {
+				position: fixed;
+				z-index: 6;
+				width: 100%;
+				height: 3.2rem;
+				background-color: rgb(255, 90, 5);
+			}
+			.appName {
+				width:40%;
+				color: navajowhite;
+				font-family: "仿宋";
+				font-size: 1.6rem;
+				text-align: center;
+				letter-spacing: -0.25rem;
+				position: absolute;
+				top: 0.75rem;
+				left: -3%;
+				background-color: rgb(255, 90, 5);
+			}
+			.search {
+				width: 62%;
+				height: 2rem;
+				display: inline-block;
+				position: absolute;
+				top: 0.4rem;
+				left: 35%;
+				background-color: rgb(255, 90, 5);
+			}
+			
+			.search img {
+				width:9%;
+				position: absolute;
+				top:0.48rem;
+				left:0.5rem;
+				background-color: antiquewhite;
+			}
+			.search input { 
+				width: 100%;
+				height: 100%;
+				font-family: "微软雅黑";
+				font-size: 1.0625rem;
+				color: rgb(116, 112, 111); 
+				padding-top:0.06rem;
+				padding-bottom: 0.005rem;
+				border-radius:8px;
+				background-color: antiquewhite;
+				border:none;
+			}
+			.nav {
+				position: absolute;
+				top: 90%;
+				background-color: white;
+			}
+			
+			.nav_scoll {
+				border-bottom: 1px solid rgb(230, 230, 230);
+				position: absolute;
+				bottom: 0px;
+				background-color: white;
+			}
+			
+			.nav_scoll a {
+				color: black;
+				font-size: 1rem;
+				padding-left: 0.75rem;
+				position: relative;
+				top: 0.6875rem;
+			}
+			.nav_bottom {
+				background-color: white;
+				color: white;
+			}
+			
+			.nav_bottom span {
+				color: black;
+			}
+			
+			.nav_bottom a
+    		{
+    			position:relative;
+    			top:0.2rem;
+    		}
+			.mui-content {
+				background: #fff;
+				width: 100%;
+				padding: 0 0.625rem;
+			}
+			
+			.type-one,
+			.type-two,
+			.type-three {
+				padding: 0.625rem 0;
+				border-bottom: 0.0625rem solid #E7E7E7;
+			}
+			
+			.title {
+				color: #202020;
+				font-size: 1.25rem;
+			}
+			
+			.mide-div {
+				position: relative;
+				margin: 0.3125rem 0;
+			}
+			
+			.mide-div-img {
+				height: 80px;
+				width: 114px;
+			}
+			
+			.type-bottom {
+				width: 100%;
+			}
+			
+			.type-bottom span {
+				color: #9B9B9B;
+				font-size: 15px;
+			}
+			
+			.type-delete {
+				border: 1px solid #ACACB4;
+				border-radius: 38%;
+				padding: 1px 2px;
+				float: right;
+			}
+			
+			.video-img {
+				width: 100%;
+				height: 140px;
+			}
+			
+			.video-time {
+				position: absolute;
+				bottom: 10px;
+				right: 5px;
+				font-size: 12px;
+				border-radius: 25%;
+				padding: 2px 4px;
+				opacity: 0.5;
+				background-color: #494F4F;
+				color: #F7FDFD;
+			}
+			
+			.video-play-buttom {
+				width: 40px;
+				position: absolute;
+				height: 40px;
+				top: 3.4rem;
+				left: 8rem;
+				opacity: 0.8;
+				background-color: transparent;
+				background-size: cover;
+				background-image: url(imgs/play.png);
+			}
