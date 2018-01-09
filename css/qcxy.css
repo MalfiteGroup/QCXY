@@ -48,7 +48,7 @@
 				color: rgb(116, 112, 111); 
 				padding-top:0.06rem;
 				padding-bottom: 0.005rem;
-				border-radius:8px;
+				border-radius:0.5rem;
 				background-color: antiquewhite;
 				border:none;
 			}
@@ -59,7 +59,7 @@
 			}
 			
 			.nav_scoll {
-				border-bottom: 1px solid rgb(230, 230, 230);
+				border-bottom: 0.0625rem solid rgb(230, 230, 230);
 				position: absolute;
 				bottom: 0px;
 				background-color: white;
@@ -110,8 +110,8 @@
 			}
 			
 			.mide-div-img {
-				height: 80px;
-				width: 114px;
+				height: 5rem;
+				width: 7.25rem;
 			}
 			
 			.type-bottom {
@@ -120,39 +120,39 @@
 			
 			.type-bottom span {
 				color: #9B9B9B;
-				font-size: 15px;
+				font-size: 0.9375rem;
 			}
 			
 			.type-delete {
-				border: 1px solid #ACACB4;
+				border: 0.0625rem solid #ACACB4;
 				border-radius: 38%;
-				padding: 1px 2px;
+				padding: 0.0625rem 0.125rem;
 				float: right;
 			}
 			
 			.video-img {
 				width: 100%;
-				height: 140px;
+				height: 8.75rem;
 			}
 			
 			.video-time {
 				position: absolute;
-				bottom: 10px;
-				right: 5px;
-				font-size: 12px;
+				bottom: 0.625rem;
+				right: 0.3125rem;
+				font-size: 0.75rem;
 				border-radius: 25%;
-				padding: 2px 4px;
+				padding: 0.125rem 0.25rem;
 				opacity: 0.5;
 				background-color: #494F4F;
 				color: #F7FDFD;
 			}
 			
 			.video-play-buttom {
-				width: 40px;
+				width: 2.5rem;
 				position: absolute;
-				height: 40px;
-				top: 3.4rem;
-				left: 8rem;
+				height: 2.5rem;
+				top: 0.2125rem;
+				left: 0.5rem;
 				opacity: 0.8;
 				background-color: transparent;
 				background-size: cover;
