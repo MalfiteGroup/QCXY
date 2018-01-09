@@ -32,118 +32,61 @@
 			</a>
 		</nav>
 		<script type="text/javascript" charset="utf-8">
-			mui.init({
-				subpages: [ //先加载首页  
-					{
-						url: 'html/index.html',
-						id: 'index',
-						styles: {
-							top: '0px',
-							bottom: '50px'
-						}
-					}
-				],
-				preloadPages: [ //缓存其他页面  
-					{
-						url: 'html/hot.html',
-						id: 'hot',
-						styles: {
-							top: '0px',
-							bottom: '50px'
-						}
-					},
-					{
-						url: 'html/column.html',
-						id: 'column',
-						styles: {
-							top: '0px',
-							bottom: '50px'
-						}
-					},
-					{
-						url: 'html/user.html',
-						id: 'user',
-						styles: {
-							top: '0px',
-							bottom: '50px'
-						}
-					}
-				]
-			});
+			mui.init();
 			mui('.mui-scroll-wrapper').scroll({
 				deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
 			});
+			var hot, user, column;
 			var isindex = true;
 			document.addEventListener('plusready', function() {
 				//js代码
-//				var StatusBarBackground=plus.navigator.getStatusBarBackground();
-				var index = plus.webview.getWebviewById('index');
-				var hot = plus.webview.getWebviewById('hot');
-				var column = plus.webview.getWebviewById('column');
-				var user = plus.webview.getWebviewById('user');
+				//				console.log(plus.screen.resolutionWidth);
+				//				console.log(plus.screen.scale);
+				var index = plus.webview.open('html/index.html', 'index', {
+					top: '0px',
+					bottom: '50px'
+				}, 'none', 200, function() {
+					hot = plus.webview.create('html/hot.html', 'hot', {
+						top: '0px',
+						bottom: '50px'
+					});
+					column = plus.webview.create('html/column.html', 'column', {
+						top: '0px',
+						bottom: '50px'
+					});
+					user = plus.webview.create('html/user.html', 'user', {
+						top: '0px',
+						bottom: '50px'
+					});
+				});
+
 				function isindexweb() {
 					if(isindex) {
 						plus.navigator.setStatusBarBackground('#FF5A05');
-					} else {  
-						plus.navigator.setStatusBarBackground("rgb(247,247,247)");
+					} else {
+						plus.navigator.setStatusBarBackground('#757575');
 					}
 				}
 				mui("#nav1").on("tap", "#index", function() { //点击触发   
-					if(index == undefined) {
-						index = mui.preload({
-							url: 'html/index.html',
-							id: 'index', //默认使用当前页面的url作为id
-							styles: {}, //窗口参数
-							extras: {} //自定义扩展参数
-						});
-					}
-					isindex=true;
+					isindex = true;
 					index.show();
 					isindexweb();
-					user.hide() //这一步必须有  
-					hot.hide() //这一步必须有  
-					column.hide() //这一步必须有  
 				});
 				mui("#nav1").on("tap", "#hot", function() { //点击触发  
-					if(hot == undefined) {
-						hot = mui.preload({
-							url: 'html/hot.html',
-							id: 'hot', //默认使用当前页面的url作为id
-							styles: {}, //窗口参数
-							extras: {} //自定义扩展参数
-						});
-					}
-					isindex=false;
+					isindex = false;
 					isindexweb();
 					hot.show();
 				});
 				mui("#nav1").on("tap", "#column", function() { //点击触发  
-					if(column == undefined) {
-						column = mui.preload({
-							url: 'column/hot.html',
-							id: 'column', //默认使用当前页面的url作为id
-							styles: {}, //窗口参数
-							extras: {} //自定义扩展参数
-						});
-					}
-					isindex=false;
+					isindex = false;
 					isindexweb();
 					column.show()
 				});
 				mui("#nav1").on("tap", "#user", function() { //点击触发
-					if(user == undefined) {
-						user = mui.preload({
-							url: 'user/hot.html',
-							id: 'user', //默认使用当前页面的url作为id
-							styles: {}, //窗口参数
-							extras: {} //自定义扩展参数
-						});
-					}
 					user.show();
-					isindex=false;
+					isindex = false;
 					isindexweb();
 				});
-
 			}, false);
 		</script>
 	</body>
