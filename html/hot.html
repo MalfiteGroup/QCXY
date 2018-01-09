@@ -10,7 +10,6 @@
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 		    <h1 class="mui-title">热点</h1>
 		</header>
 		<div class="mui-content">
@@ -18,7 +17,10 @@
 		</div>
 		<script src="../js/mui.min.js"></script>
 		<script type="text/javascript">
-			mui.init()
+			mui.init();
+			document.addEventListener('plusready',function(){
+//				plus.navigator.setStatusBarBackground('aqua')
+			},false);
 		</script>
 	</body>
 

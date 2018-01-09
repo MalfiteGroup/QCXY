@@ -73,12 +73,21 @@
 			mui('.mui-scroll-wrapper').scroll({
 				deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
 			});
+			var isindex = true;
 			document.addEventListener('plusready', function() {
 				//js代码
+//				var StatusBarBackground=plus.navigator.getStatusBarBackground();
 				var index = plus.webview.getWebviewById('index');
 				var hot = plus.webview.getWebviewById('hot');
 				var column = plus.webview.getWebviewById('column');
 				var user = plus.webview.getWebviewById('user');
+				function isindexweb() {
+					if(isindex) {
+						plus.navigator.setStatusBarBackground('#FF5A05');
+					} else { 
+						plus.navigator.setStatusBarBackground('#757575');
+					}
+				}
 				mui("#nav1").on("tap", "#index", function() { //点击触发   
 					if(index == undefined) {
 						index = mui.preload({
@@ -88,7 +97,9 @@
 							extras: {} //自定义扩展参数
 						});
 					}
+					isindex=true;
 					index.show();
+					isindexweb();
 					user.hide() //这一步必须有  
 					hot.hide() //这一步必须有  
 					column.hide() //这一步必须有  
@@ -102,7 +113,9 @@
 							extras: {} //自定义扩展参数
 						});
 					}
-					hot.show()
+					isindex=false;
+					isindexweb();
+					hot.show();
 				});
 				mui("#nav1").on("tap", "#column", function() { //点击触发  
 					if(column == undefined) {
@@ -113,6 +126,8 @@
 							extras: {} //自定义扩展参数
 						});
 					}
+					isindex=false;
+					isindexweb();
 					column.show()
 				});
 				mui("#nav1").on("tap", "#user", function() { //点击触发
@@ -124,10 +139,11 @@
 							extras: {} //自定义扩展参数
 						});
 					}
-					user.show()
+					user.show();
+					isindex=false;
+					isindexweb();
 				});
-				//设置状态栏颜色
-				plus.navigator.setStatusBarBackground('white');
+
 			}, false);
 		</script>
 	</body>
