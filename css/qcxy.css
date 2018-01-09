@@ -44,9 +44,10 @@
 				width: 100%;
 				height: 100%;
 				font-family: "微软雅黑";
-				font-size: 1.0625rem;
+				font-size: 0.98rem;
 				color: rgb(116, 112, 111); 
 				padding-top:0.06rem;
+				text-indent:1em;
 				padding-bottom: 0.005rem;
 				border-radius:0.5rem;
 				background-color: antiquewhite;
@@ -54,17 +55,25 @@
 			}
 			.nav {
 				position: absolute;
-				top: 90%;
+				top: 3rem;
 				background-color: white;
 			}
 			
-			.nav_scoll {
-				border-bottom: 0.0625rem solid rgb(230, 230, 230);
+			.nav_scoll 
+			{
 				position: absolute;
-				bottom: 0px;
+				bottom:0rem;
 				background-color: white;
 			}
-			
+			.line
+			{
+				width:100%;
+				z-index:2;
+				position: absolute;
+				top:5.3rem;
+				border-bottom: 0.06rem solid rgb(255, 90, 5);
+				
+			}
 			.nav_scoll a {
 				color: black;
 				font-size: 1rem;
@@ -144,7 +153,6 @@
 				padding: 0.125rem 0.25rem;
 				opacity: 0.5;
 				background-color: #494F4F;
-				color: #F7FDFD;
 			}
 			
 			.video-play-buttom {
