@@ -32,20 +32,33 @@
 			</a>
 		</nav>
 		<script type="text/javascript" charset="utf-8">
-			mui.init();
+			mui.init({
+				//先加载首页,不然出现白页面
+				subpages: [{
+					url: 'html/index.html',
+					id: 'index',
+					style: {
+						top: '0px',
+						bottom: '50px'
+					}
+				}]
+			});
 			mui('.mui-scroll-wrapper').scroll({
 				deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
 			});
-			var hot, user, column;
+			var index, hot, user, column;
 			var isindex = true;
 			document.addEventListener('plusready', function() {
-				//js代码
-				//				console.log(plus.screen.resolutionWidth);
-				//				console.log(plus.screen.scale);
-				var index = plus.webview.open('html/index.html', 'index', {
-					top: '0px',
-					bottom: '50px'
-				}, 'none', 200, function() {
+				index = plus.webview.getWebviewById('index');
+				if(index == undefined) {
+					index = plus.webview.open('html/index.html', 'index', {
+						top: '0px',
+						bottom: '50px'
+					}, 'none', 200, preload())
+				} else {
+					preload();
+				}
+				function preload() {
 					hot = plus.webview.create('html/hot.html', 'hot', {
 						top: '0px',
 						bottom: '50px'
@@ -58,8 +71,7 @@
 						top: '0px',
 						bottom: '50px'
 					});
-				});
-
+				}
 				function isindexweb() {
 					if(isindex) {
 						plus.navigator.setStatusBarBackground('#FF5A05');
@@ -90,5 +102,4 @@
 			}, false);
 		</script>
 	</body>
-
 </html>

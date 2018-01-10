@@ -17,6 +17,7 @@
 				<img src="../imgs/search.png" />
 				<input type="text" value="" placeholder="搜索" />
 			</form>
+			<div class="plus"></div>
 			<nav id="nav" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted nav">
 				<div class="mui-scroll nav_scoll">
 					<a class="">推荐</a>
@@ -36,7 +37,7 @@
 			</nav>
 			<div id="line" class="line"></div>
 		</header>
-		<div class="mui-scroll-wrapper" style="top: 5rem;">
+		<div class="mui-scroll-wrapper" id="scroll1" style="top: 5rem;">
 			<div class="mui-scroll mui-content">
 				<!--<div style="width:30px;height:1000px;margin:0px auto;background-color:white;">大家拖动滚动条下吧 我很长 这样就能看到导航栏固定的效果了</div>-->
 				<!--type-one为文字模板,type-two为精彩小视频,type-three为视频-->
@@ -198,6 +199,10 @@
 				</div>
 			</div>
 		</div>
+		<div class="mui-scroll-wrapper" id="scroll2" style="top: 5rem;">
+			<div class="mui-scroll mui-content">
+			</div>
+		</div>
 		<script type="text/javascript" charset="utf-8">
 			mui.init();
 			mui('.mui-scroll-wrapper').scroll({
@@ -205,11 +210,22 @@
 			});
 			document.addEventListener('plusready', function() {
 				//设置状态栏颜色
+				var scroll2=document.getElementById('scroll2');
+				var scroll2_status='none';
 				mui(".mui-content").on('tap', '.type-delete', function(e) {
 					var type_div = this.parentNode.parentNode;
 					type_div.style.display = "none";
 					e.stopPropagation();
 				}, false);
+//				document.getElementById('scroll2').addEventListener('tap',function(e){
+//					if(scroll2_status=='none'){
+//						scroll2.style.display='block';
+//						scroll2_status=='blcok';
+//					}else{
+//						scroll2.style.display='none';
+//						scroll2_status=='none';
+//					}
+//				},false);为什么会出错
 				mui(".mui-content").on('tap', '.type', function() {
 					var content = plus.webview.getWebviewById('content.html');
 					if(content == undefined) {

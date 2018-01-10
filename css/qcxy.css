@@ -1,168 +1,190 @@
-			* {
-				margin:0;
-				padding:0;
-				font-family: "微软雅黑";
-				background-color: rgb(255, 255, 255);
-			}
-			.head {
-				position: fixed;
-				z-index: 6;
-				width: 100%;
-				height: 3.2rem;
-				background-color: rgb(255, 90, 5);
-			}
-			.appName {
-				width:40%;
-				color: navajowhite;
-				font-family: "仿宋";
-				font-size: 1.6rem;
-				text-align: center;
-				letter-spacing: -0.25rem;
-				position: absolute;
-				top: 0.75rem;
-				left: -3%;
-				background-color: rgb(255, 90, 5);
-			}
-			.search {
-				width: 62%;
-				height: 2rem;
-				display: inline-block;
-				position: absolute;
-				top: 0.4rem;
-				left: 35%;
-				background-color: rgb(255, 90, 5);
-			}
-			
-			.search img {
-				width:9%;
-				position: absolute;
-				top:0.48rem;
-				left:0.5rem;
-				background-color: antiquewhite;
-			}
-			.search input { 
-				width: 100%;
-				height: 100%;
-				font-family: "微软雅黑";
-				font-size: 0.98rem;
-				color: rgb(116, 112, 111); 
-				padding-top:0.06rem;
-				text-indent:1em;
-				padding-bottom: 0.005rem;
-				border-radius:0.5rem;
-				background-color: antiquewhite;
-				border:none;
-			}
-			.nav {
-				position: absolute;
-				top: 3rem;
-				background-color: white;
-			}
-			
-			.nav_scoll 
-			{
-				position: absolute;
-				bottom:0rem;
-				background-color: white;
-			}
-			.line
-			{
-				width:100%;
-				z-index:2;
-				position: absolute;
-				top:5.3rem;
-				border-bottom: 0.06rem solid rgb(255, 90, 5);
-				
-			}
-			.nav_scoll a {
-				color: black;
-				font-size: 1rem;
-				padding-left: 0.75rem;
-				position: relative;
-				top: 0.6875rem;
-			}
-			.nav_bottom {
-				background-color: white;
-				color: white;
-			}
-			
-			.nav_bottom span {
-				color: black;
-			}
-			
-			.nav_bottom a
-    		{
-    			position:relative;
-    			top:0.2rem;
-    		}
-			.mui-content {
-				background: #fff;
-				width: 100%;
-				padding: 0 0.625rem;
-			}
-			
-			.type-one,
-			.type-two,
-			.type-three {
-				padding: 0.625rem 0;
-				border-bottom: 0.0625rem solid #E7E7E7;
-			}
-			
-			.title {
-				color: #202020;
-				font-size: 1.25rem;
-			}
-			
-			.mide-div {
-				position: relative;
-				margin: 0.3125rem 0;
-			}
-			
-			.mide-div-img {
-				height: 5rem;
-				width: 7.25rem;
-			}
-			
-			.type-bottom {
-				width: 100%;
-			}
-			
-			.type-bottom span {
-				color: #9B9B9B;
-				font-size: 0.9375rem;
-			}
-			
-			.type-delete {
-				border: 0.0625rem solid #ACACB4;
-				border-radius: 38%;
-				padding: 0.0625rem 0.125rem;
-				float: right;
-			}
-			
-			.video-img {
-				width: 100%;
-				height: 8.75rem;
-			}
-			
-			.video-time {
-				position: absolute;
-				bottom: 0.625rem;
-				right: 0.3125rem;
-				font-size: 0.75rem;
-				border-radius: 25%;
-				padding: 0.125rem 0.25rem;
-				opacity: 0.5;
-				background-color: #494F4F;
-			}
-			
-			.video-play-buttom {
-				width: 2.5rem;
-				position: absolute;
-				height: 2.5rem;
-				top: 0.2125rem;
-				left: 0.5rem;
-				opacity: 0.8;
-				background-color: transparent;
-				background-size: cover;
-				background-image: url(imgs/play.png);
-			}
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+	background-color: rgb(255, 255, 255);
+}
+
+.head {
+	position: fixed;
+	z-index: 6;
+	width: 100%;
+	height: 3.2rem;
+	background-color: rgb(255, 90, 5);
+}
+
+.appName {
+	width: 40%;
+	color: navajowhite;
+	font-family: "仿宋";
+	font-size: 1.6rem;
+	text-align: center;
+	letter-spacing: -0.25rem;
+	position: absolute;
+	top: 0.75rem;
+	left: -3%;
+	background-color: rgb(255, 90, 5);
+}
+
+.search {
+	width: 62%;
+	height: 2rem;
+	display: inline-block;
+	position: absolute;
+	top: 0.4rem;
+	left: 35%;
+	background-color: rgb(255, 90, 5);
+}
+
+.search img {
+	width: 9%;
+	position: absolute;
+	top: 0.48rem;
+	left: 0.5rem;
+	background-color: antiquewhite;
+}
+
+.search input {
+	width: 100%;
+	height: 100%;
+	font-family: "微软雅黑";
+	font-size: 0.98rem;
+	color: rgb(116, 112, 111);
+	padding-top: 0.06rem;
+	text-indent: 1em;
+	padding-bottom: 0.005rem;
+	border-radius: 0.5rem;
+	background-color: antiquewhite;
+	border: none;
+}
+
+.nav {
+	position: absolute;
+	top: 3rem;
+	background-color: white;
+}
+
+.nav_scoll {
+	position: absolute;
+	bottom: 0rem;
+	background-color: white;
+}
+
+.line {
+	width: 100%;
+	z-index: 2;
+	position: absolute;
+	top: 5.3rem;
+	border-bottom: 0.06rem solid rgb(255, 90, 5);
+}
+
+.nav_scoll a {
+	color: black;
+	font-size: 1rem;
+	padding-left: 0.75rem;
+	position: relative;
+	top: 0.6875rem;
+}
+
+.nav_bottom {
+	background-color: white;
+	color: white;
+}
+
+.nav_bottom span {
+	color: black;
+}
+
+.nav_bottom a {
+	position: relative;
+	top: 0.2rem;
+}
+
+.mui-content {
+	background: #fff;
+	width: 100%;
+	padding: 0 0.625rem;
+}
+
+.type-one,
+.type-two,
+.type-three {
+	padding: 0.625rem 0;
+	border-bottom: 0.0625rem solid #E7E7E7;
+}
+
+.title {
+	color: #202020;
+	font-size: 1.25rem;
+}
+
+.mide-div {
+	position: relative;
+	margin: 0.3125rem 0;
+}
+
+.mide-div-img {
+	height: 5rem;
+	width: 7.25rem;
+}
+
+.type-bottom {
+	width: 100%;
+}
+
+.type-bottom span {
+	color: #9B9B9B;
+	font-size: 0.9375rem;
+}
+
+.type-delete {
+	border: 0.0625rem solid #ACACB4;
+	border-radius: 38%;
+	padding: 0.0625rem 0.125rem;
+	float: right;
+}
+
+.video-img {
+	width: 100%;
+	height: 8.75rem;
+}
+
+.video-time {
+	position: absolute;
+	bottom: 0.625rem;
+	right: 0.3125rem;
+	font-size: 0.75rem;
+	border-radius: 25%;
+	padding: 0.125rem 0.25rem;
+	opacity: 0.5;
+	background-color: #494F4F;
+}
+
+.video-play-buttom {
+	width: 2.5rem;
+	position: absolute;
+	height: 2.5rem;
+	top: 0.2125rem;
+	left: 0.5rem;
+	opacity: 0.8;
+	background-color: transparent;
+	background-size: cover;
+	background-image: url(imgs/play.png);
+}
+
+.plus {
+	position: absolute;
+	top: 3.2rem;
+	right: 0px;
+	height: 1.4375rem;
+	width: 1.4375rem;
+	background-size: cover;
+	z-index: 8;
+	background-color: #fff;
+	opacity: 0.9;
+	background-image: url(../imgs/plus.png);
+}
+
+#scroll2 {
+	display: none;
+}
