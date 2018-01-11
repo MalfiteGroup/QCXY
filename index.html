@@ -7,6 +7,7 @@
 		<title></title>
 		<script src="js/mui.min.js"></script>
 		<link href="css/mui.min.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
 		<link href="css/qcxy.css" rel="stylesheet" />
 	</head>
 
@@ -49,6 +50,12 @@
 			var index, hot, user, column;
 			var isindex = true;
 			document.addEventListener('plusready', function() {
+				//自适应
+				var pluswidth=plus.screen.resolutionWidth*plus.screen.scale;
+//				var fontsize=Math.ceil(640/pluswidth*16);
+				var fontsize=(640/pluswidth)*16;
+				$('html').css('font-size',fontsize);
+				console.log($('html').css('font-size'));
 				index = plus.webview.getWebviewById('index');
 				if(index == undefined) {
 					index = plus.webview.open('html/index.html', 'index', {
