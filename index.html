@@ -7,7 +7,6 @@
 		<title></title>
 		<script src="js/mui.min.js"></script>
 		<link href="css/mui.min.css" rel="stylesheet" />
-		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
 		<link href="css/qcxy.css" rel="stylesheet" />
 	</head>
 
@@ -33,39 +32,20 @@
 			</a>
 		</nav>
 		<script type="text/javascript" charset="utf-8">
-			mui.init({
-				//先加载首页,不然出现白页面
-				subpages: [{
-					url: 'html/index.html',
-					id: 'index',
-					style: {
-						top: '0px',
-						bottom: '50px'
-					}
-				}]
-			});
+			mui.init();
 			mui('.mui-scroll-wrapper').scroll({
 				deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
 			});
-			var index, hot, user, column;
+			var hot, user, column;
 			var isindex = true;
 			document.addEventListener('plusready', function() {
-				//自适应
-				var pluswidth=plus.screen.resolutionWidth*plus.screen.scale;
-//				var fontsize=Math.ceil(640/pluswidth*16);
-				var fontsize=(640/pluswidth)*16;
-				$('html').css('font-size',fontsize);
-				console.log($('html').css('font-size'));
-				index = plus.webview.getWebviewById('index');
-				if(index == undefined) {
-					index = plus.webview.open('html/index.html', 'index', {
-						top: '0px',
-						bottom: '50px'
-					}, 'none', 200, preload())
-				} else {
-					preload();
-				}
-				function preload() {
+				//js代码
+				//				console.log(plus.screen.resolutionWidth);
+				//				console.log(plus.screen.scale);
+				var index = plus.webview.open('html/index.html', 'index', {
+					top: '0px',
+					bottom: '50px'
+				}, 'none', 200, function() {
 					hot = plus.webview.create('html/hot.html', 'hot', {
 						top: '0px',
 						bottom: '50px'
@@ -78,18 +58,23 @@
 						top: '0px',
 						bottom: '50px'
 					});
-				}
-				function isindexweb() {
-					if(isindex) {
+				});
+				function isindexweb() 
+				{
+					if(isindex) 
+					{
 						plus.navigator.setStatusBarBackground('#FF5A05');
-					} else {
-						plus.navigator.setStatusBarBackground('#757575');
+					} 
+					else 
+					{
+						plus.navigator.setStatusBarBackground('rgb(247,247,247)');
 					}
 				}
+				isindexweb();
 				mui("#nav1").on("tap", "#index", function() { //点击触发   
 					isindex = true;
-					index.show();
 					isindexweb();
+					index.show();
 				});
 				mui("#nav1").on("tap", "#hot", function() { //点击触发  
 					isindex = false;
@@ -99,14 +84,16 @@
 				mui("#nav1").on("tap", "#column", function() { //点击触发  
 					isindex = false;
 					isindexweb();
-					column.show()
+					column.show();
 				});
 				mui("#nav1").on("tap", "#user", function() { //点击触发
 					user.show();
 					isindex = false;
 					isindexweb();
+					user.show();
 				});
 			}, false);
 		</script>
 	</body>
+
 </html>
