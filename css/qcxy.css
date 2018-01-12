@@ -3,159 +3,177 @@
 				padding:0;
 				font-family: "微软雅黑";
 				background-color: rgb(255, 255, 255);
+				line-height:0.5636rem;
 			}
 			.head {
 				position: fixed;
 				z-index:6;
-				width:6.4rem;
-				height:1.024rem;
+				width:10rem;
+				height:1.6rem;
 				background-color: rgb(255, 90, 5);
 			}
 			.appName {
-				width:2.56rem;
+				width:4rem;
 				color: navajowhite;
 				font-family: "仿宋";
-				font-size:0.512rem;
+				font-size:0.8rem;
 				text-align: center;
-				letter-spacing: -0.08rem;
+				letter-spacing: -0.125rem;
 				position: absolute;
-				top: 0.24rem;
-				left:-0.192rem;
-				background-color:rgb(255, 90, 5);
-			}
-			.search {
-				width: 3.968rem;
-				height:0.64rem;
-				display: inline-block;
-				position: absolute;
-				top:0.128rem;
-				left:2.24rem;
+				top: 0.45rem;
+				left:-0.375rem;
 				background-color: rgb(255, 90, 5);
 			}
-			
+			.search {
+				width:6.2rem;
+				height:1rem;
+				display: inline-block;
+				position: absolute;
+				top:0.25rem;
+				left:3.5rem;
+				background-color: rgb(255, 90, 5);
+			}
 			.search img {
-				width:0.35712rem;
+				width:0.558rem;
 				position: absolute;
-				top:0.1536rem;
-				left:0.16rem;
+				top:0.24rem;
+				left:0.25rem;
 				background-color: antiquewhite;
 			}
-			.search input { 
-				width:3.968rem;
-				height:0.64rem;
+			.search input 
+			{ 
+				width:6.2rem;
+				height:1rem;
+				font-size:0.4725rem;
+				padding-top:0.3333rem;
+				padding-left:1.06667rem;
+				padding-bottom:0.3333rem;
+				font-family:"微软雅黑";
 				color: rgb(116, 112, 111); 
-				padding-top:0.24rem;
-				font-family: "微软雅黑";
-				font-size: 0.3136rem;
-				text-indent:1em;
-				border-radius:0.1rem;
-				background-color: antiquewhite;
 				border:none;
+				border-radius:0.15625rem;
+				background-color: antiquewhite;
 			}
-			.nav {
-				position: absolute;
-				z-index:1;
-				top:0.96rem;
-				border-bottom: 1rem solid rgb(255, 90, 5);
-			}
+     		input::-webkit-input-placeholder 
+     		{
+         		/* placeholder颜色  */
+        		color: #aab2bd;
+         		/* placeholder字体大小  */
+         		font-size:0.4725rem;
+         		/* placeholder位置  */
+         		text-align:left;
+         		line-height:0.625rem;
+		    }
 			.line
 			{
-				width:6.4rem;
+				width:10rem;
 				position: absolute;z-index:8;
-				top:1.70rem;
-				border-bottom: 0.022rem solid #E7E7E7;
+				top:2.64rem;
+				border-bottom:0.02rem solid #E7E7E7;
 			}
-			.nav_scoll 
+			.nav-wrap
+			{
+				position:absolute;z-index:7;
+				top:1.859375rem;
+				height:50px;
+
+			}
+			.nav
+			{
+			}
+			.nav-item
+			{
+				font-size:0.45rem;
+				color:black;
+				padding-left:0.375rem;
+			}
+			.content
 			{
 				position: absolute;
-				bottom:0rem;
-				background-color: white;
+				top:2.65625rem;
 			}
-			.nav_scoll a {
-				color: black;
-				font-size:0.32rem;
-				padding-left: 0.24rem;
-				position: relative;
-				top: 0.22rem;
-			}
-			.nav_bottom {
+			.nav_bottom 
+			{
 				background-color: white;
 				color: white;
 			}
-			.nav_bottom span {
+			.nav_bottom span 
+			{
 				color: black;
 			}
 			.nav_bottom a
     		{
     			position:relative;
-    			top:0.20rem;
+    			top:0.3135rem;
     		}
-			.mui-content {
+			.mui-content 
+			{
 				background: #fff;
-				width:6.4rem;
-				padding: 0 0.2rem;
+				width:10rem;
+				padding: 0 0.3135rem;
 			}
-			
 			.type-one,
 			.type-two,
-			.type-three {
-				padding: 0.2rem 0;
-				border-bottom: 0.02rem solid #E7E7E7;
+			.type-three 
+			{
+				padding: 0.3135rem 0;
+				border-bottom: 0.03135rem solid #E7E7E7;
 			}
-			.title {
+			.title 
+			{
 				color: #202020;
-				font-size: 0.4rem;
+				font-size:0.5rem;
 			}
-			
-			.mide-div {
+			.mide-div 
+			{
 				position: relative;
-				margin: 0.1rem 0;
+				margin: 0.15625rem 0;
 			}
-			
 			.mide-div-img {
-				height:1.6rem;
-				width:0.73728rem;
+				height:2.5rem;
+				width:1.152rem;
 			}
-			
-			.type-bottom {
-				width:6.4rem;
+			.type-bottom 
+			{
+				width:10rem;
 			}
-			
-			.type-bottom span {
+			.type-bottom span 
+			{
 				color: #9B9B9B;
-				font-size: 0.3rem;
+				font-size: 0.46875rem;
 			}
-			
-			.type-delete {
-				border:0.02rem solid #ACACB4;
+			.type-delete 
+			{
+				border:0.03125rem solid #ACACB4;
 				position:relative;
-				left:1.76rem;
+				left:2.75rem;
 			}
 			
-			.video-img {
-				width: 6.4rem;
-				height: 2.8rem;
+			.video-img 
+			{
+				width:10rem;
+				height:4.375rem;
 			}
-			
-			.video-time {
+			.video-time 
+			{
 				position: absolute;
-				bottom: 0.2rem;
-				right: 2.8rem;
-				font-size: 0.24rem;
-				border-radius:1.6rem;
-				padding:0.04rem 0.08rem;
+				bottom: 0.3125rem;
+				right: 4.375rem;
+				font-size: 0.375rem;
+				border-radius:2.5rem;
+				padding:0.0625rem 0.125rem;
 				opacity: 0.5;
 				background-color: #494F4F;
 			}
-			
-			.video-play-buttom {
-				width: 0.8rem;
+			.video-play-buttom 
+			{
+				width: 1.25rem;
 				position: absolute;
-				height: 0.8rem;
-				top: 0.06799999rem;
+				height: 1.25rem;
+				top: 0.10625rem;
 				left: 0.16rem;
-				opacity: 0.8;
+				opacity:0.5;
 				background-color: transparent;
 				background-size: cover;
-				background-image: url(imgs/play.png);
+				background-image: url(../imgs/play.png);
 			}
