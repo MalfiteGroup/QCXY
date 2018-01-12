@@ -38,14 +38,19 @@
 			});
 			var hot, user, column;
 			var isindex = true;
+
 			document.addEventListener('plusready', function() {
-				//js代码
-				//				console.log(plus.screen.resolutionWidth);
-				//				console.log(plus.screen.scale);
-				var index = plus.webview.open('html/index.html', 'index', {
-					top: '0px',
-					bottom: '50px'
-				}, 'none', 200, function() {
+				var index = plus.webview.getWebviewById('index');
+				if(index == undefined) {
+					index = plus.webview.open('html/index.html', 'index', {
+						top: '0px',
+						bottom: '50px'
+					}, 'none', 200, createweb);
+				} else {
+					createweb();
+				}
+
+				function createweb() {
 					hot = plus.webview.create('html/hot.html', 'hot', {
 						top: '0px',
 						bottom: '50px'
@@ -58,19 +63,22 @@
 						top: '0px',
 						bottom: '50px'
 					});
-				});
-				function isindexweb() 
-				{
-					if(isindex) 
-					{
+				}
+
+				function isindexweb() {
+					if(isindex) {
 						plus.navigator.setStatusBarBackground('#FF5A05');
-					} 
-					else 
-					{
+					} else {
 						plus.navigator.setStatusBarBackground('rgb(247,247,247)');
 					}
 				}
 				isindexweb();
+//				document.querySelector('header').addEventListener('doubletap', function() {
+//					if(contentWebview == null) {
+//						contentWebview = plus.webview.currentWebview().children()[0];
+//					}
+//					contentWebview.evalJS("mui('#pullrefresh').pullRefresh().scrollTo(0,0,100)");
+//				});
 				mui("#nav1").on("tap", "#index", function() { //点击触发   
 					isindex = true;
 					isindexweb();
