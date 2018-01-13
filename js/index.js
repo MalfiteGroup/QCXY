@@ -1,10 +1,18 @@
-mui.init();
+mui.init({
+	    subpages:[{
+      url:'html/index.html',//子页面HTML地址，支持本地地址和网络地址
+      id:'index',//子页面标志
+      styles:{
+        top:'0',//子页面顶部位置
+        bottom:'50px',//子页面底部位置
+      }
+    }]
+});
 mui('.mui-scroll-wrapper').scroll({
 	deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
 });
 var hot, user, column;
 var isindex = true;
-
 document.addEventListener('plusready', function() {
 	var index = plus.webview.getWebviewById('index');
 	if(index == undefined) {
