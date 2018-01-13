@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title></title>
 		<script src="js/mui.min.js"></script>
+		<script src="js/zishiying.js"></script>
 		<link href="css/mui.min.css" rel="stylesheet" />
 		<link href="css/qcxy.css" rel="stylesheet" />
 	</head>
@@ -13,24 +13,24 @@
 	<body>
 		<div class="mui-content">
 		</div>
-		<nav class="mui-bar mui-bar-tab nav_bottom" id="nav1">
-			<a class="mui-tab-item mui-active" id="index">
-				<span class="mui-icon"><img src="imgs/index.png" style="width:23px;"/></span>
-				<span class="mui-tab-label">首页</span>
-			</a>
-			<a class="mui-tab-item" id="hot">
-				<span class="mui-icon"><img src="imgs/hot3.png" style="width:23px;"/></span>
-				<span class="mui-tab-label">热点</span>
-			</a>
-			<a class="mui-tab-item" id="column">
-				<span class="mui-icon"><img src="imgs/column.png" style="width:23px;"/></span>
-				<span class="mui-tab-label">专栏</span>
-			</a>
-			<a class="mui-tab-item" id="user">
-				<span class="mui-icon"><img src="imgs/stu.png" style="width:22px;"/></span>
-				<span class="mui-tab-label">未登录</span>
-			</a>
-		</nav>
+<nav id="nav-bottom" class="mui-bar mui-bar-tab nav-bottom" style="height:1.56rem;">
+    <a id="index" class="mui-tab-item mui-active">
+    	<img src="imgs/index.png"/>
+        <span>首页</span>
+    </a>
+    <a id="hot" class="mui-tab-item">
+    	<img src="imgs/hot3.png"/>
+        <span>热点</span>
+    </a>
+    <a id="column" class="mui-tab-item">
+    	<img src="imgs/column.png"/>
+        <span>专栏</span>
+    </a>
+    <a id="user" class="mui-tab-item">
+    	<img src="imgs/stu.png" style="left:0.3rem;"/>
+        <span class="mui-tab-label">我</span>
+    </a>
+</nav>
 		<script type="text/javascript" charset="utf-8">
 			mui.init();
 			mui('.mui-scroll-wrapper').scroll({
@@ -38,19 +38,14 @@
 			});
 			var hot, user, column;
 			var isindex = true;
-
 			document.addEventListener('plusready', function() {
-				var index = plus.webview.getWebviewById('index');
-				if(index == undefined) {
-					index = plus.webview.open('html/index.html', 'index', {
-						top: '0px',
-						bottom: '50px'
-					}, 'none', 200, createweb);
-				} else {
-					createweb();
-				}
-
-				function createweb() {
+				//js代码
+				//				console.log(plus.screen.resolutionWidth);
+				//				console.log(plus.screen.scale);
+				var index = plus.webview.open('html/index.html', 'index', {
+					top: '0px',
+					bottom: '50px'
+				}, 'none', 200, function() {
 					hot = plus.webview.create('html/hot.html', 'hot', {
 						top: '0px',
 						bottom: '50px'
@@ -63,38 +58,35 @@
 						top: '0px',
 						bottom: '50px'
 					});
-				}
-
-				function isindexweb() {
-					if(isindex) {
+				});
+				function isindexweb() 
+				{
+					if(isindex) 
+					{
 						plus.navigator.setStatusBarBackground('#FF5A05');
-					} else {
+					} 
+					else 
+					{
 						plus.navigator.setStatusBarBackground('rgb(247,247,247)');
 					}
 				}
 				isindexweb();
-//				document.querySelector('header').addEventListener('doubletap', function() {
-//					if(contentWebview == null) {
-//						contentWebview = plus.webview.currentWebview().children()[0];
-//					}
-//					contentWebview.evalJS("mui('#pullrefresh').pullRefresh().scrollTo(0,0,100)");
-//				});
-				mui("#nav1").on("tap", "#index", function() { //点击触发   
+				mui("#nav-bottom").on("tap", "#index", function() { //点击触发   
 					isindex = true;
 					isindexweb();
 					index.show();
 				});
-				mui("#nav1").on("tap", "#hot", function() { //点击触发  
+				mui("#nav-bottom").on("tap", "#hot", function() { //点击触发  
 					isindex = false;
 					isindexweb();
 					hot.show();
 				});
-				mui("#nav1").on("tap", "#column", function() { //点击触发  
+				mui("#nav-bottom").on("tap", "#column", function() { //点击触发  
 					isindex = false;
 					isindexweb();
 					column.show();
 				});
-				mui("#nav1").on("tap", "#user", function() { //点击触发
+				mui("#nav-bottom").on("tap", "#user", function() { //点击触发
 					user.show();
 					isindex = false;
 					isindexweb();
