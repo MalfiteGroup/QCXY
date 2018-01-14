@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
@@ -12,27 +11,88 @@
 	</head>
 
 	<body>
-		<div class="mui-content">
-		</div>
+		<div class="mui-content"></div>
 		<nav id="nav-bottom" class="mui-bar mui-bar-tab nav-bottom" style="height:1.56rem;">
-			<a id="index" class="mui-tab-item mui-active">
-				<img src="imgs/index.png" />
-				<span>首页</span>
-			</a>
-			<a id="hot" class="mui-tab-item">
-				<img src="imgs/hot3.png" />
-				<span>热点</span>
-			</a>
-			<a id="column" class="mui-tab-item">
-				<img src="imgs/column.png" />
-				<span>专栏</span>
-			</a>
-			<a id="user" class="mui-tab-item">
-				<img src="imgs/stu.png" style="left:0.3rem;" />
-				<span class="mui-tab-label">我</span>
-			</a>
+		    <a id="index" class="mui-tab-item mui-active nav-bottom-item">
+		    	<img src="imgs/index.png"/>
+		        <span>首页</span>
+		    </a>
+		    <a id="hot" class="mui-tab-item nav-bottom-item">
+		    	<img src="imgs/hot.png"/>
+		        <span>热点</span>
+		    </a>
+		    <a id="column" class="mui-tab-item nav-bottom-item">
+		    	<img src="imgs/column.png"/>
+		        <span>专栏</span>
+		    </a>
+		    <a id="user" class="mui-tab-item nav-bottom-item">
+		    	<img src="imgs/stu.png"/>
+		        <span class="mui-tab-label">我</span>
+		    </a>
 		</nav>
-		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+			mui('.mui-scroll-wrapper').scroll({
+				deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+			});
+			var hot, user, column;
+			var isindex = true;
+			document.addEventListener('plusready', function() {
+				//js代码
+				//				console.log(plus.screen.resolutionWidth);
+				//				console.log(plus.screen.scale);
+				var index = plus.webview.open('html/index.html', 'index', {
+					top: '0px',
+					bottom: '50px'
+				}, 'none', 200, function() {
+					hot = plus.webview.create('html/hot.html', 'hot', {
+						top: '0px',
+						bottom: '50px'
+					});
+					column = plus.webview.create('html/column.html', 'column', {
+						top: '0px',
+						bottom: '50px'
+					});
+					user = plus.webview.create('html/user.html', 'user', {
+						top: '0px',
+						bottom: '50px'
+					});
+				});
+				function isindexweb()
+				{
+					if(isindex) 
+					{
+						plus.navigator.setStatusBarBackground('rgb(188,83,38)');
+					} 
+					else 
+					{
+						plus.navigator.setStatusBarBackground('rgb(255,255,255)');
+					}
+				}
+				isindexweb();
+				mui("#nav-bottom").on("tap", "#index", function() { //点击触发   
+					isindex = true;
+					isindexweb();
+					index.show();
+				});
+				mui("#nav-bottom").on("tap", "#hot", function() { //点击触发  
+					isindex = false;
+					isindexweb();
+					hot.show();
+				});
+				mui("#nav-bottom").on("tap", "#column", function() { //点击触发  
+					isindex = false;
+					isindexweb();
+					column.show();
+				});
+				mui("#nav-bottom").on("tap", "#user", function() { //点击触发
+					user.show();
+					isindex = false;
+					isindexweb();
+					user.show();
+				});
+			}, false);
+		</script>
 	</body>
 
 </html>

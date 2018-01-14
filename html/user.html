@@ -5,16 +5,134 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="../js/mui.min.js"></script>
 		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style>
+			html,
+			body {
+				font-size: 16px;
+			}
+			
+			.header {
+				background: #3B3B3B;
+				color: #fff;
+			}
+			
+			.header-header img,
+			.header-header div {
+				display: inline-block;
+			}
+			
+			.touxiang {
+				height: 60px;
+				width: 60px;
+				margin-left: 15px;
+				border-radius: 100%;
+				float: left;
+			}
+			
+			.header-header-span {
+				display: inline-block;
+				margin: 23px 0 40px 15px;
+			}
+			
+			.header-header-div-img {
+				width: 10px;
+				height: 10px;
+			}
+			
+			.header-header-div {
+				float: right;
+				padding: 10px;
+				background: #2A2A2A;
+				border-radius: 40%;
+			}
+			
+			..header-header-div span {
+				font-size: 10px;
+			}
+			
+			..header-bottom p {
+				display: inline-block;
+				flex-shrink: 1;
+			}
+			
+			.header-bottom {
+				display: flex;
+				justify-content: space-around;
+				width: 100%;
+			}
+			
+			.mid-header {
+				align-content: center;
+				padding-top: 8px;
+				background: #fff;
+				height: 60px;
+				display: flex;
+				width: 100%;
+				justify-content: space-around;
+			}
+			
+			.mid-header-div {
+				display: inline-block;
+			}
+			
+			.mid-header-div img {
+				display: inline-block;
+				width: 25px;
+			}
+			
+			.mid-header-div p {
+				color: #505050;
+			}
+			.mid-row{
+				
+			}
+		</style>
 	</head>
 
 	<body>
-		<header class="mui-bar mui-bar-nav">
-		    <h1 class="mui-title">我</h1>
-		</header>
-		<script src="../js/mui.min.js"></script>
+		<div class="mui-content">
+			<div style="width: 100%;height: 44px;background: #3B3B3B;"></div>
+			<div class="header" style="background: #3B3B3B;">
+				<div class="header-header">
+					<img src="../imgs/timg3.jpg" class="touxiang" />
+					<span class="header-header-span">青春学院</span>
+					<div class="header-header-div">
+						<img src="../imgs/column.png" class="header-header-div-img" />
+						<span>今日阅读</span><br/>
+						<span>1分钟</span>
+					</div>
+				</div>
+				<div class="header-bottom">
+					<p>动态:0</p>
+					<p>关注:0</p>
+					<p>粉丝:0</p>
+				</div>
+			</div>
+			<div class="mid">
+				<div class="mid-header">
+					<div class="mid-header-div"><img src="../imgs/column.png" />
+						<p>收藏</p>
+					</div>
+					<div class="mid-header-div"><img src="../imgs/column.png" />
+						<p>收藏</p>
+					</div>
+					<div class="mid-header-div"><img src="../imgs/column.png" />
+						<p>收藏</p>
+					</div>
+				</div>
+				<div class="mid-row">
+					<span class="title">
+						消息通知
+					</span>
+					<span class="placeholder"></span>
+					<span class="mui-icon-arrowright mui-icon"></span>
+				</div>
+			</div>
+		</div>
 		<script type="text/javascript">
-			mui.init()
+			mui.init();
 		</script>
 	</body>
 
