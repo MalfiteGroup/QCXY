@@ -1,22 +1,12 @@
-mui.init({
-	    subpages:[{
-      url:'html/index.html',//子页面HTML地址，支持本地地址和网络地址
-      id:'index',//子页面标志
-      styles:{
-        top:'0',//子页面顶部位置
-        bottom:'50px',//子页面底部位置
-      }
-    }]
-});
 mui('.mui-scroll-wrapper').scroll({
 	deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
 });
 var hot, user, column;
-var isindex = true;
+var isHome = true;
 document.addEventListener('plusready', function() {
-	var index = plus.webview.getWebviewById('index');
-	if(index == undefined) {
-		index = plus.webview.open('html/index.html', 'index', {
+	var home = plus.webview.getWebviewById('home');
+	if(home == undefined) {
+		home = plus.webview.open('html/home.html', 'home', {
 			top: '0px',
 			bottom: '50px'
 		}, 'none', 200, createweb);
@@ -38,34 +28,17 @@ document.addEventListener('plusready', function() {
 			bottom: '50px'
 		});
 	}
-
-	function isindexweb() {
-		if(isindex) {
-			plus.navigator.setStatusBarBackground('#FF5A05');
-		} else {
-			plus.navigator.setStatusBarBackground('rgb(247,247,247)');
-		}
-	}
-	isindexweb();
-	mui("#nav-bottom").on("tap", "#index", function() { //点击触发   
-		isindex = true;
-		isindexweb();
-		index.show();
+	
+	mui("#nav-bottom").on("tap", "#home", function() { //点击触发   
+		home.show();
 	});
 	mui("#nav-bottom").on("tap", "#hot", function() { //点击触发  
-		isindex = false;
-		isindexweb();
 		hot.show();
 	});
 	mui("#nav-bottom").on("tap", "#column", function() { //点击触发  
-		isindex = false;
-		isindexweb();
 		column.show();
 	});
 	mui("#nav-bottom").on("tap", "#user", function() { //点击触发
-		user.show();
-		isindex = false;
-		isindexweb();
 		user.show();
 	});
 }, false);

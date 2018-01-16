@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<script src="../js/mui.min.js"></script>
+
 		<link rel="stylesheet" href="../css/mui.min.css">
 		<style>
 			html,
@@ -74,13 +74,48 @@
 			<p style="margin: 5px 15px 25px 15px;">
 				这是一种解决滚动条通顶问题的变通解决方案，该方案有如下优点：
 			</p>
+			
+			<div>
+				<ul class="hm-description">
+					<li>相比双webview的方案，性能更高，动效更酷</li>
+					<li>相比H5版本的透明导航栏，使用原生渐变动画，也有更高的性能体验</li>
+				</ul>
+			</div>
+			
+			<h5 class="mui-content-padded">图片类型</h5>
+			<form class="mui-input-group" style="margin-bottom: 300px;">
+				<div class="mui-input-row mui-radio">
+					<label>静态图片</label>
+					<input name="style" type="radio" checked value="static">
+				</div>
+				<div class="mui-input-row mui-radio">
+					<label>轮播图</label>
+					<input name="style" type="radio" value="slider">
+				</div>
+			</form>
 		</div>
-		<script>
-			document.addEventListener("plusready",function(){
-			var curWebview=plus.webview.currentWebview();
-			curWebview.setStyle({bounce:"vertical"});
-			},false);
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var slider = document.getElementById("slider");
+			mui('.mui-input-group').on('change', 'input', function() {
+				if(this.checked) {
+					switch(this.value) {
+						case 'static':
+							document.getElementById("img1").className = "";
+							document.getElementById("slider").classList.add("mui-hidden");
+							break;
+						case 'slider':
+							document.getElementById("img1").className = "mui-hidden";
+							if(slider.classList.contains("mui-hidden")) {
+								document.getElementById("slider").classList.remove("mui-hidden");
+							}
+							break;
+					}
+				}
+			});
 		</script>
+
 	</body>
 
 </html>
