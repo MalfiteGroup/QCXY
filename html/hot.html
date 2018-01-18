@@ -21,7 +21,7 @@
 			}
 			#header h1
 			{
-				font-size:0.55rem;line-height:2rem;height:2rem;margin:1.55rem auto;
+				font-size:0.55rem;line-height:2rem;margin:1.55rem auto;
 			}
 		</style>
 	</head>
@@ -34,10 +34,19 @@
 		</div>
 		<script src="../js/mui.min.js"></script>
 		<script type="text/javascript">
-			mui.init();
-			document.addEventListener('plusready',function(){
-//				plus.navigator.setStatusBarBackground('aqua')
-			},false);
+			mui.init({
+			    subpages:[{
+			      url:"hotSubpage.html",//子页面HTML地址，支持本地地址和网络地址
+			      id:"hotSubpage.html",//子页面标志
+			      styles:{
+			        top:'100px',//子页面顶部位置
+			        bottom:'0px',//子页面底部位置
+			        width:'100%',//子页面宽度，默认为100%
+			        height:'81%'//子页面高度，默认为100%
+			      },
+			      extras:{}//额外扩展参数
+			    }]
+			 }); 
 		</script>
 	</body>
 

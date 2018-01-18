@@ -20,33 +20,26 @@
 	}
 	.logo
 	{
-		width:3rem;
+		width:4rem;
 		position: relative;
-		top:0.82rem;
-		left:0.4rem;
+		top:0.72rem;
+		left:2.7rem;
 		background-color:initial;
 	}
 	.search-box
 	{
-		width:5.75rem;
+		width:1.8rem;
 		height:0.9rem;
 		display: inline-block;
 		position: absolute;
 		top:0.88rem;
-		left:3.8rem;
-		background-color:initial;
-	}
-	.search-box img 
-	{
-		width:0.36rem;
-		position: absolute;
-		top:0.3rem;
-		left:0.3rem;
-		background-color: initial;
+		left:0rem;
+		border-radius:18%;
+	 	background-color:initial;
 	}
 	.search-box input
 	{ 
-		width:5.75rem;
+		width:1.8rem;
 		height:0.9rem;
 		font-size:0.5rem;
 		padding-top:0.38rem;
@@ -54,8 +47,10 @@
 		padding-bottom:0.3333rem;
 		font-family:"微软雅黑";
 		color: rgb(116, 112, 111); 
-		border:0.0241rem solid white;
-		background-color: initial;
+		border-radius:18%;
+		border: 0.5px solid darkgray;
+		border: none;
+	 	background-color:initial;
 	}
 	.search-box input::-webkit-input-placeholder 
 	{
@@ -66,6 +61,14 @@
 		/* placeholder位置  */
 		text-align:left;
 		line-height:0.625rem;
+	}
+	.search-box img 
+	{
+		width:0.7rem;
+		position: absolute;
+		top:0.2rem;
+		left:1.0rem;
+		background-color: initial;
 	}
 /*底部四格导航*/
 	#nav-bottom
