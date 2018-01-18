@@ -3,7 +3,7 @@
 		margin:0;
 		padding:0;
 		font-family:"微软雅黑";
-		background-color: rgb(255, 255, 255); 
+		background-color: rgb(255, 255, 255);
 		line-height:0.5636rem;
 	}
 /*顶部header*/
@@ -14,6 +14,9 @@
 		width:10rem;
 		height:2.047rem;
 		border-bottom:0.01rem solid rgb(178,178,178)!important;
+		background-image: url(../imgs/headerBgImg.jpg);
+		background-size:10rem 3.125rem;
+		background-position:0rem -0.0322061191626409rem;
 	}
 	.logo
 	{
@@ -39,7 +42,7 @@
 		position: absolute;
 		top:0.3rem;
 		left:0.3rem;
-		background-color: antiquewhite;
+		background-color: initial;
 	}
 	.search-box input
 	{ 
@@ -51,9 +54,8 @@
 		padding-bottom:0.3333rem;
 		font-family:"微软雅黑";
 		color: rgb(116, 112, 111); 
-		border:none;
-		border-radius:0.15625rem;
-		background-color: antiquewhite;
+		border:0.0241rem solid white;
+		background-color: initial;
 	}
 	.search-box input::-webkit-input-placeholder 
 	{
@@ -69,7 +71,7 @@
 	#nav-bottom
 	{
 		background-color: rgb(238,238,238);
-		position:fixed;z-index: 6;
+		position:fixed;
 	}
 	#nav-bottom .nav-bottom-item
 	{
@@ -159,13 +161,17 @@
 	{
 		top:0rem!important;
 		height:1.1rem!important; /**/
-		background-color: rgb(255, 255, 255);  /**/
+		background-color: rgb(255, 255, 255);
+		background-image: url(../imgs/headerBgImg.jpg);
+		background-size:10rem 3.125rem;
+		background-position:0rem -2.053140096618357rem;
 	}							   /**/
 	#itemsWrap                     /**/
 	{                             /**/
 		height:1.1rem!important;/**/
 		font-size:0.48rem!important;
 		border-bottom:0.02rem solid rgb(178,178,178)!important;
+		background-color: initial;
 	}
 	.mui-control-item
 	{
