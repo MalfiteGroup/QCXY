@@ -27,15 +27,25 @@ proto._initParent = function() {
 		this.parent.show('none');
 	}
 };
-proto._initNativeView = function() {
+	var clientWidth=document.documentElement.clientWidth;
+	console.log("clientWidth:"+clientWidth);
+	var clientHeight=document.documentElement.clientHeight+100;//不清楚为什么要加100
+	console.log("clientHeight:"+clientHeight);
+	var header_height=clientWidth/10*(2.047+1.09);
+	console.log("header_height:"+header_height);
+	var nav_bottom_height=clientWidth/10*1.5625;
+	console.log("nav_bottom_height:"+nav_bottom_height);
+	var height=clientHeight-(header_height+nav_bottom_height);
+	console.log("height:"+height);
+proto._initNativeView = function() { 
 	// fixed by wmy 因为沉浸式应用，需要额外加上状态栏高度
-	var statusbar_H = plus.navigator.getStatusbarHeight(); 
+	var statusbar_H = plus.navigator.getStatusbarHeight();
 	this.nativeView = new plus.nativeObj.View('__MUI_TAB_NATIVE', {
-		'top': (83 + statusbar_H) +'px', //这个需要根据顶部导航及顶部选项卡高度自动调整
-		'height': (window.screen.height - 83)+"px",
+		'top':(header_height/2)+'px', //这个需要根据顶部导航及顶部选项卡高度自动调整
+		'height':(height/2)+'px',
 		'left': '100%',
 		'width': '100%',
-		"backgroundColor":"#ffffff"
+		"backgroundColor":"#EFEFF4" 
 	});
 	this.nativeView.show();
 };
@@ -233,7 +243,7 @@ _proto.createWebview = function(from) {
 	var options = this.options;
 	options.styles = options.styles || {
 		top: "83px",
-		bottom: "0px",
+		bottom: "60px",
 		render: "always"
 	};
 	options.styles.popGesture = 'none';
