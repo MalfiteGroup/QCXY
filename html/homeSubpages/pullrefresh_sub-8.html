@@ -18,7 +18,18 @@
 				<!--数据列表-->
 				<ul class="mui-table-view mui-table-view-chevron">
 					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 1</a>
+						<a href="" class="mui-navigate-right">
+							<video width="10rem"  webkit-playsinline id="videoMedia" controls="controls" preload='auto'>
+								<source src="myvideo.mp4" type="video/mp4"></source>
+								<source src="myvideo.ogv" type="video/ogg"></source>
+								<source src="myvideo.webm" type="video/webm"></source>
+								<object width="" height="" type="application/x-shockwave-flash" data="myvideo.swf">
+									<param name="movie" value="myvideo.swf" />
+									<param name="flashvars" value="autostart=true&amp;file=myvideo.swf" />
+								</object>
+								当前浏览器不支持 video直接播放，点击这里下载视频： <a href="myvideo.webm">下载视频</a>
+							</video>
+						</a>
 					</li>
 					<li class="mui-table-view-cell">
 						<a href="" class="mui-navigate-right">Item 2</a>
@@ -41,16 +52,18 @@
 				pullRefresh: {
 					container: '#pullrefresh',
 					down: {
+						auto:true,
+						contentdown: '青春校园',
+						contentover: '放开刷新',
+						contentrefresh: '正在努力刷新',
 						callback: pulldownRefresh
 					},
 					up: {
-						contentup: '上拉刷新',
-						contentover: '然后放开我...',
-						contentrefresh: '正在加载',
+						contentrefresh: '正在努力加载...',
 						callback: pullupRefresh
 					}
 				}
-			});
+			});	
 			/**
 			 * 下拉刷新具体业务实现
 			 */

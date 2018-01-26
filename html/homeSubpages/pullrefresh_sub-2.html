@@ -17,8 +17,10 @@
 			<div class="mui-scroll">
 				<!--数据列表-->
 				<ul class="mui-table-view mui-table-view-chevron">
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 1</a>
+					<li class="mui-table-view-cell" style="display: block">
+						<a style="display: block;">
+							<p>人类首次克隆出猴子，而且还是由中国的科学家完成的。人类首次克隆出猴子，而且还是由中国的科学家完成的。</p>
+						</a>
 					</li>
 					<li class="mui-table-view-cell">
 						<a href="" class="mui-navigate-right">Item 2</a>
@@ -41,16 +43,18 @@
 				pullRefresh: {
 					container: '#pullrefresh',
 					down: {
+						auto:true,
+						contentdown: '青春校园',
+						contentover: '放开刷新',
+						contentrefresh: '正在努力刷新',
 						callback: pulldownRefresh
 					},
 					up: {
-						contentup: '上拉刷新',
-						contentover: '然后放开我...',
-						contentrefresh: '正在加载',
+						contentrefresh: '正在努力加载...',
 						callback: pullupRefresh
 					}
 				}
-			});
+			});	
 			/**
 			 * 下拉刷新具体业务实现
 			 */

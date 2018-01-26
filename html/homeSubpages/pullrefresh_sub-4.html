@@ -9,6 +9,51 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 		<link rel="stylesheet" href="../../css/mui.min.css">
+		<style type="text/css">
+			*{font-family: "微软雅黑";color:black;}
+			.mui-content
+			{
+				background-color:rgb(255,255,255);
+			}
+			ul li
+			{
+				padding:20px 20px 0px 20px!important;/*分别为上左下右*/
+			}
+
+			.content-cell a,.content-cell a span/*设为block盒子*/
+			{
+				display: block;
+			}
+			.content-cell a
+			{
+				border-bottom: 1.2px solid #E3E2E5;
+			}
+			.content-cell-title
+			{
+				font-size: 20px;
+				line-height:27px;
+			}
+			.content-cell-middle
+			{
+				padding:4px 0;
+				
+			}
+			.content-cell-middle img
+			{
+				height: 80px;
+			}
+			.content-cell-foot p
+			{
+				display: inline-block;
+				padding-right:10px;
+			}
+			.content-cell-foot img
+			{
+				position: relative;
+				top:2.4px;right:-147px;
+				width:18px;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -17,21 +62,24 @@
 			<div class="mui-scroll">
 				<!--数据列表-->
 				<ul class="mui-table-view mui-table-view-chevron">
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 1</a>
+
+					<li class="content-cell">
+						<a href="#">
+							<span class="content-cell-title">人类首次克隆出猴子，而且还是由中国的科学家完成的。</span>
+							<span class="content-cell-middle">
+								<img src="../../imgs/monkey1.jpg"/>
+								<img src="../../imgs/monkey2.jpg"/>
+								<img src="../../imgs/monkey3.jpg"/>
+							</span>
+							<span class="content-cell-foot">
+								<p>悟空问答</p>
+								<p>212评论</p>
+								<p>21分钟前</p>
+								<img src="../../imgs/deleteIcon.png"/>
+							</span>
+						</a>
 					</li>
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 2</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 3</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 4</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 5</a>
-					</li>
+
 				</ul>
 			</div>
 		</div>
@@ -41,27 +89,29 @@
 				pullRefresh: {
 					container: '#pullrefresh',
 					down: {
+						auto:true,
+						contentdown: '青春校园',
+						contentover: '放开刷新',
+						contentrefresh: '正在努力刷新',
 						callback: pulldownRefresh
 					},
 					up: {
-						contentup: '上拉刷新',
-						contentover: '然后放开我...',
-						contentrefresh: '正在加载',
+						contentrefresh: '正在努力加载...',
 						callback: pullupRefresh
 					}
 				}
-			});
+			});	
 			/**
 			 * 下拉刷新具体业务实现
 			 */
 			function pulldownRefresh() {
 				setTimeout(function() {
 					var table = document.body.querySelector('.mui-table-view');
-					var cells = document.body.querySelectorAll('.mui-table-view-cell');
-					for (var i = cells.length, len = i + 3; i < len; i++) {
+					var cells = document.body.querySelectorAll('.content-cell');
+					for (var i = cells.length, len = i + 1; i < len; i++) {
 						var li = document.createElement('li');
-						li.className = 'mui-table-view-cell';
-						li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+						li.className = 'content-cell';
+						li.innerHTML = '<a href="#"><span class="content-cell-title">人类首次克隆出猴子，而且还是由中国的科学家完成的。</span><span class="content-cell-middle"><img src="../../imgs/monkey1.jpg"/><img src="../../imgs/monkey2.jpg"/><img src="../../imgs/monkey3.jpg"/></span><span class="content-cell-foot"><p>悟空问答</p><p>212评论</p><p>21分钟前</p><img src="../../imgs/deleteIcon.png"/></span></a>';
 						//下拉刷新，新纪录插到最前面；
 						table.insertBefore(li, table.firstChild);
 					}
@@ -76,11 +126,11 @@
 				setTimeout(function() {
 					mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
 					var table = document.body.querySelector('.mui-table-view');
-					var cells = document.body.querySelectorAll('.mui-table-view-cell');
-					for (var i = cells.length, len = i + 5; i < len; i++) {
+					var cells = document.body.querySelectorAll('.content-cell');
+					for (var i = cells.length, len = i + 1; i < len; i++) {
 						var li = document.createElement('li');
-						li.className = 'mui-table-view-cell';
-						li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+						li.className = 'content-cell';
+						li.innerHTML = '<a href="#"><span class="content-cell-title">人类首次克隆出猴子，而且还是由中国的科学家完成的。</span><span class="content-cell-middle"><img src="../../imgs/monkey1.jpg"/><img src="../../imgs/monkey2.jpg"/><img src="../../imgs/monkey3.jpg"/></span><span class="content-cell-foot"><p>悟空问答</p><p>212评论</p><p>21分钟前</p><img src="../../imgs/deleteIcon.png"/></span></a>';
 						table.appendChild(li);
 					}
 				}, 1500);

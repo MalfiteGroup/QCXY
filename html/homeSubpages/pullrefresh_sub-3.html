@@ -9,6 +9,17 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 		<link rel="stylesheet" href="../../css/mui.min.css">
+		<style>
+			ul li
+			{
+				display: block;
+			}
+			ul li a
+			{
+				display: inline-block;
+			}
+			
+		</style>
 	</head>
 
 	<body>
@@ -17,8 +28,8 @@
 			<div class="mui-scroll">
 				<!--数据列表-->
 				<ul class="mui-table-view mui-table-view-chevron">
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 1</a>
+					<li class="">
+						<a href="" style="				background-color: red;" class="mui-navigate-right">包含页眉页脚的卡片，页眉常用来显示面板标题，页脚用来显示额外信息或支持的操作（比如点赞、评论等）</a>
 					</li>
 					<li class="mui-table-view-cell">
 						<a href="" class="mui-navigate-right">Item 2</a>
@@ -41,16 +52,18 @@
 				pullRefresh: {
 					container: '#pullrefresh',
 					down: {
+						auto:true,
+						contentdown: '青春校园',
+						contentover: '放开刷新',
+						contentrefresh: '正在努力刷新',
 						callback: pulldownRefresh
 					},
 					up: {
-						contentup: '上拉刷新',
-						contentover: '然后放开我...',
-						contentrefresh: '正在加载',
+						contentrefresh: '正在努力加载...',
 						callback: pullupRefresh
 					}
 				}
-			});
+			});	
 			/**
 			 * 下拉刷新具体业务实现
 			 */

@@ -15,41 +15,40 @@
 		height:2.047rem;
 		background-image: url(../imgs/headerBgImg.jpg);
 		background-size:10rem 3.125rem;
-		background-position:0rem -0.0322061191626409rem;
+		background-position:0rem 0rem; 
 	}
 	.logo
 	{
-		width:4rem;
+		width:3.5rem;
 		position: relative;
-		top:0.72rem;
-		left:2.7rem;
+		top:0.9rem;
+		left:0.9rem;
 		background-color:initial;
-	}
+	} 
 	.search-box
 	{
-		width:1.8rem;
-		height:0.9rem;
+		width:3.6rem;
+		height:0.8rem;
 		display: inline-block;
 		position: absolute;
-		top:0.88rem;
-		left:0rem;
-		border-radius:18%;
+		top:1rem;
+		left:4.6rem;
 	 	background-color:initial;
 	}
 	.search-box input
 	{ 
-		width:1.8rem;
-		height:0.9rem;
+		width:3.6rem;
+		height:0.8rem;
 		font-size:0.5rem;
 		padding-top:0.38rem;
 		padding-left:0.9rem;
 		padding-bottom:0.3333rem;
 		font-family:"微软雅黑";
 		color: rgb(116, 112, 111); 
-		border-radius:18%;
+		border-radius:10%;
 		border: 0.5px solid darkgray;
 		border: none;
-	 	background-color:initial;
+	 	background-color:rgb(246,245,244);
 	}
 	.search-box input::-webkit-input-placeholder 
 	{
@@ -63,94 +62,11 @@
 	}
 	.search-box img 
 	{
-		width:0.7rem;
+		width:0.45rem;
 		position: absolute;
-		top:0.2rem;
-		left:1.0rem;
+		top:0.22rem;
+		left:0.2rem;
 		background-color: initial;
-	}
-/*底部四格导航*/
-	#nav-bottom
-	{
-		background-color: rgb(238,238,238);
-		position:fixed;
-	}
-	#nav-bottom .nav-bottom-item
-	{
-		border-top:0.01rem solid rgb(178,178,178);
-		background-color: rgb(249,248,248);
-		position: relative;
-		left:0.0005rem;
-	}
-	#nav-bottom .nav-bottom-item img
-	{
-		display:inline-block;
-		width:0.7rem;
-		background-color: rgb(249,248,248);
-		position: relative;
-		top:-0.09375rem;
-		left:0.41rem;
-	}
-	#nav-bottom .nav-bottom-item span
-	{
-		display:inline-block; 
-		position:relative;
-		left:-0.33rem;
-		text-align:center;
-		font-size:0.35rem;
-		top:0.35rem;
-		background-color: rgb(249,248,248);
-		color:rgb(121,126,131)
-	}
-	#nav-bottom #index img
-	{
-		display:inline-block;
-		width:0.7rem;
-		background-color: rgb(249,248,248);
-		position: relative;
-		top:-0.09375rem;
-		left:0.41rem;
-	}
-	#nav-bottom #hot img
-	{
-		width:0.85rem;
-		top:-0.1rem;
-		left:0.39rem;
-	}
-	#nav-bottom #hot span
-	{
-		top:0.26rem;
-		left:-0.445rem;
-	}
-	#nav-bottom #column img
-	{
-		width:0.65rem;
-		top:-0.1rem;
-	}
-	#nav-bottom #column span
-	{
-		top:0.345rem;
-	}
-	#nav-bottom #user img
-	{
-		top:-0.1rem;
-		left:0.23rem;	
-	}
-	#nav-bottom #user span
-	{
-		top:0.3125rem;
-		left:-0.36rem;
-	}
-	#nav-bottom .nav-bottom-item span
-	{
-		display:inline-block; 
-		position:relative;
-		left:-0.33rem;
-		text-align:center;
-		font-size:0.35rem;
-		top:0.35rem;
-		background-color: rgb(249,248,248);
-		color:rgb(121,126,131)
 	}
 /*上面的滚动导航条*/
 
@@ -166,7 +82,7 @@
 		background-color: rgb(255, 255, 255);
 		background-image: url(../imgs/headerBgImg.jpg);
 		background-size:10rem 3.125rem;
-		background-position:0rem -2.053140096618357rem;
+		background-position:0rem -2.01rem;
 	}							   /**/
 	#itemsWrap                     /**/
 	{                             /**/

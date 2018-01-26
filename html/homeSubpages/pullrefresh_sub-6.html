@@ -41,16 +41,18 @@
 				pullRefresh: {
 					container: '#pullrefresh',
 					down: {
+						auto:true,
+						contentdown: '青春校园',
+						contentover: '放开刷新',
+						contentrefresh: '正在努力刷新',
 						callback: pulldownRefresh
 					},
 					up: {
-						contentup: '上拉刷新',
-						contentover: '然后放开我...',
-						contentrefresh: '正在加载',
+						contentrefresh: '正在努力加载...',
 						callback: pullupRefresh
 					}
 				}
-			});
+			});	
 			/**
 			 * 下拉刷新具体业务实现
 			 */

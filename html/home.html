@@ -85,9 +85,10 @@
 
 	<body>
 		<header id="header" class="header">
-			<img id="logo" class="logo" src="../imgs/qcxylogo.png" />
-			<form action="" method="post" id="search-box" class="search-box">
-				<img src="../imgs/search.png" />
+			<img id="logo" class="logo" src="../imgs/qcxylogo.png" /> 
+			<form action="" method="post" class="search-box">
+				<img src="../imgs/search.png" /> 
+				<input type="input" value=""/>
 			</form>
 		</header>
 		<div class="mui-content">
@@ -135,7 +136,7 @@
 		<script>
 			mui.init();
 			var clientWidth=document.documentElement.clientWidth;
-			var header_height=clientWidth/10*(2.047+1.09);
+			var header_height=clientWidth/10*(2.01+1.04);
 			console.log("header_height:"+header_height);		
 			mui.plusReady(function() {
 				var _self = plus.webview.currentWebview();
