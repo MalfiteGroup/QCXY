@@ -9,6 +9,83 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 		<link rel="stylesheet" href="../../css/mui.min.css">
+ 		<style type="text/css"> 
+	 	*{font-family: "微软雅黑";color:black;}
+		.mui-content 
+		{
+		    background-color:rgb(255,255,255);
+		}
+		ul li 
+		{
+		    padding:0.38rem 0.564rem 0rem 0.4rem!important;/*分别为上左下右*/
+		}
+		.content-cell a,.content-cell a span /*设为block盒子*/
+		{
+		     display: block;
+		}
+		.content-cell a 
+		{
+		    border-bottom: 0.03rem solid rgb(232,232,232);
+		}
+		.content-cell-title 
+		{
+		    font-size:0.564rem;
+		    line-height:0.725rem;
+		}
+		.content-cell-middle 
+		{
+		    padding:0.120rem 0;
+		}
+		.content-cell-middle img 
+		{
+		    height: 1.89rem;
+		}
+		.content-cell-foot p 
+		{
+		    display: inline-block;
+		    padding-right:0.22rem;
+		    padding-left: 0.05rem;
+		    font-size: 0.29rem;
+		    margin-top: 0.1rem;
+		    margin-bottom:0.56rem;
+		}
+		.content-cell-foot img 
+		{
+		    position: relative;
+		    top:0.064rem;
+		    right:-4.0rem;
+		    width:0.25rem;
+		}
+		.mui-icon /*刷新箭头样式*/
+		{
+			font-size: 0.7rem;
+			color:rgb(153,153,153);
+		}
+		.mui-pull 
+		{
+			position: relative;
+			top:0.35rem;
+			font-weight: 400;
+		}
+		.mui-pull-caption /*刷新文字样式*/
+		{
+			font-size: 0.45rem;
+			color:rgb(153,153,153);
+			line-height: 0.69rem;
+		}
+		.mui-table-view:before
+		{
+			background: white;
+		}
+		.mui-table-view:after
+		{
+			background: white;
+		}
+		.mui-pull-bottom-pocket, .mui-pull-top-pocket
+		{
+			height:1.5625rem!important;
+		}
+ </style> 
 	</head>
 
 	<body>
@@ -17,34 +94,40 @@
 			<div class="mui-scroll">
 				<!--数据列表-->
 				<ul class="mui-table-view mui-table-view-chevron">
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 1</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 2</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 3</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 4</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a href="" class="mui-navigate-right">Item 5</a>
+
+					<li class="content-cell">
+						<a href="#">
+							<span class="content-cell-title">人类首次克隆出猴子，而且还是由中国的科学家完成的。</span>
+							<span class="content-cell-middle">
+								<img src="../../imgs/monkey1.jpg"/>
+								<img src="../../imgs/monkey2.jpg"/>
+								<img src="../../imgs/monkey3.jpg"/>
+							</span>
+							<span class="content-cell-foot">
+								<p>悟空问答</p>
+								<p>212评论</p>
+								<p>21分钟前</p>
+								<img src="../../imgs/deleteIcon.png"/>
+							</span>
+						</a>
 					</li>
 				</ul>
 			</div>
 		</div>
 		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/zishiying.js" ></script>
 		<script>
+			var clientWidth=document.documentElement.clientWidth;
+			var pulldownHeight=clientWidth/10*0.90625;		
 			mui.init({
 				pullRefresh: {
 					container: '#pullrefresh',
 					down: {
 						auto:true,
+						height:pulldownHeight,
 						contentdown: '青春校园',
 						contentover: '放开刷新',
-						contentrefresh: '正在努力刷新',
+						contentrefresh: '正在努力刷新...',
 						callback: pulldownRefresh
 					},
 					up: {
@@ -54,16 +137,16 @@
 				}
 			});	
 			/**
-			 * 下拉刷新具体业务实现	
+			 * 下拉刷新具体业务实现
 			 */
 			function pulldownRefresh() {
 				setTimeout(function() {
 					var table = document.body.querySelector('.mui-table-view');
-					var cells = document.body.querySelectorAll('.mui-table-view-cell');
-					for (var i = cells.length, len = i + 3; i < len; i++) {
+					var cells = document.body.querySelectorAll('.content-cell');
+					for (var i = cells.length, len = i + 1; i < len; i++) {
 						var li = document.createElement('li');
-						li.className = 'mui-table-view-cell';
-						li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+						li.className = 'content-cell';
+						li.innerHTML = '<a href="#"><span class="content-cell-title">人类首次克隆出猴子，而且还是由中国的科学家完成的。</span><span class="content-cell-middle"><img src="../../imgs/monkey1.jpg"/><img src="../../imgs/monkey2.jpg"/><img src="../../imgs/monkey3.jpg"/></span><span class="content-cell-foot"><p>悟空问答</p><p>212评论</p><p>21分钟前</p><img src="../../imgs/deleteIcon.png"/></span></a>';
 						//下拉刷新，新纪录插到最前面；
 						table.insertBefore(li, table.firstChild);
 					}
@@ -78,11 +161,11 @@
 				setTimeout(function() {
 					mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
 					var table = document.body.querySelector('.mui-table-view');
-					var cells = document.body.querySelectorAll('.mui-table-view-cell');
-					for (var i = cells.length, len = i + 5; i < len; i++) {
+					var cells = document.body.querySelectorAll('.content-cell');
+					for (var i = cells.length, len = i + 1; i < len; i++) {
 						var li = document.createElement('li');
-						li.className = 'mui-table-view-cell';
-						li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+						li.className = 'content-cell';
+						li.innerHTML = '<a href="#"><span class="content-cell-title">人类首次克隆出猴子，而且还是由中国的科学家完成的。</span><span class="content-cell-middle"><img src="../../imgs/monkey1.jpg"/><img src="../../imgs/monkey2.jpg"/><img src="../../imgs/monkey3.jpg"/></span><span class="content-cell-foot"><p>悟空问答</p><p>212评论</p><p>21分钟前</p><img src="../../imgs/deleteIcon.png"/></span></a>';
 						table.appendChild(li);
 					}
 				}, 1500);

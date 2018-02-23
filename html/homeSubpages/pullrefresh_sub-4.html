@@ -9,51 +9,83 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 		<link rel="stylesheet" href="../../css/mui.min.css">
-		<style type="text/css">
-			*{font-family: "微软雅黑";color:black;}
-			.mui-content
-			{
-				background-color:rgb(255,255,255);
-			}
-			ul li
-			{
-				padding:20px 20px 0px 20px!important;/*分别为上左下右*/
-			}
-
-			.content-cell a,.content-cell a span/*设为block盒子*/
-			{
-				display: block;
-			}
-			.content-cell a
-			{
-				border-bottom: 1.2px solid #E3E2E5;
-			}
-			.content-cell-title
-			{
-				font-size: 20px;
-				line-height:27px;
-			}
-			.content-cell-middle
-			{
-				padding:4px 0;
-				
-			}
-			.content-cell-middle img
-			{
-				height: 80px;
-			}
-			.content-cell-foot p
-			{
-				display: inline-block;
-				padding-right:10px;
-			}
-			.content-cell-foot img
-			{
-				position: relative;
-				top:2.4px;right:-147px;
-				width:18px;
-			}
-		</style>
+ 		<style type="text/css"> 
+	 	*{font-family: "微软雅黑";color:black;}
+		.mui-content 
+		{
+		    background-color:rgb(255,255,255);
+		}
+		ul li 
+		{
+		    padding:0.38rem 0.564rem 0rem 0.4rem!important;/*分别为上左下右*/
+		}
+		.content-cell a,.content-cell a span /*设为block盒子*/
+		{
+		     display: block;
+		}
+		.content-cell a 
+		{
+		    border-bottom: 0.03rem solid rgb(232,232,232);
+		}
+		.content-cell-title 
+		{
+		    font-size:0.564rem;
+		    line-height:0.725rem;
+		}
+		.content-cell-middle 
+		{
+		    padding:0.120rem 0;
+		}
+		.content-cell-middle img 
+		{
+		    height: 1.89rem;
+		}
+		.content-cell-foot p 
+		{
+		    display: inline-block;
+		    padding-right:0.22rem;
+		    padding-left: 0.05rem;
+		    font-size: 0.29rem;
+		    margin-top: 0.1rem;
+		    margin-bottom:0.56rem;
+		}
+		.content-cell-foot img 
+		{
+		    position: relative;
+		    top:0.064rem;
+		    right:-4.0rem;
+		    width:0.25rem;
+		}
+		.mui-icon /*刷新箭头样式*/
+		{
+			font-size: 0.7rem;
+			color:rgb(153,153,153);
+		}
+		.mui-pull 
+		{
+			position: relative;
+			top:0.35rem;
+			font-weight: 400;
+		}
+		.mui-pull-caption /*刷新文字样式*/
+		{
+			font-size: 0.45rem;
+			color:rgb(153,153,153);
+			line-height: 0.69rem;
+		}
+		.mui-table-view:before
+		{
+			background: white;
+		}
+		.mui-table-view:after
+		{
+			background: white;
+		}
+		.mui-pull-bottom-pocket, .mui-pull-top-pocket
+		{
+			height:1.5625rem!important;
+		}
+ </style> 
 	</head>
 
 	<body>
@@ -79,20 +111,23 @@
 							</span>
 						</a>
 					</li>
-
 				</ul>
 			</div>
 		</div>
 		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/zishiying.js" ></script>
 		<script>
+			var clientWidth=document.documentElement.clientWidth;
+			var pulldownHeight=clientWidth/10*0.90625;		
 			mui.init({
 				pullRefresh: {
 					container: '#pullrefresh',
 					down: {
 						auto:true,
+						height:pulldownHeight,
 						contentdown: '青春校园',
 						contentover: '放开刷新',
-						contentrefresh: '正在努力刷新',
+						contentrefresh: '正在努力刷新...',
 						callback: pulldownRefresh
 					},
 					up: {

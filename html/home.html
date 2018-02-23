@@ -6,90 +6,99 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<link rel="stylesheet" href="../css/qcxy.css" />
 		<link rel="stylesheet" href="../css/mui.min.css">
 		<style>
-			html,
-			body {
+			*
+			{
+				margin:0;
+				padding:0;
+				font-family:"微软雅黑";
 				background-color: rgb(255, 255, 255);
-				font-family: "微软雅黑";
+				line-height:0.5636rem;
 			}
-			.mui-bar~.mui-content .mui-fullscreen {
-				top:0.6875rem;
-				height: auto;
-			}
-			.mui-pull-top-tips {/*顶部刷新圈圈*/
-				position: absolute;
-				top:1.2rem;
-				left:9.0625rem;
-				width: 0.78125rem;/**/
-				height: 0.78125rem;/**/
-				border-radius: 100%;
-				z-index:4;
-				background-color:rgb(255,255,255);
-			}
-			.mui-bar~.mui-pull-top-tips {
-				top: 0.375rem;
-			}
-			.mui-pull-top-wrapper {
-				width: 0.78125rem;/**/
-				height: 0.78125rem;/**/
-				display: block;
-				text-align: center;
-				border-radius: 0.390625rem;
-				background-clip: padding-box;
-				background-color:rgb(255,255,255);
-				overflow: hidden;
-			}
-			.mui-pull-top-tips.mui-transitioning {
-				-webkit-transition-duration:200ms;
-				transition-duration: 200ms;
-			}
-			.mui-pull-top-tips .mui-pull-loading {
-				/*-webkit-backface-visibility: hidden;
-				-webkit-transition-duration: 400ms;
-				transition-duration: 400ms;*/
+		/*顶部header*/
+			.header 
+			{
+				position: fixed;
+				z-index:10;
+				width:10rem;
+				height:2.047rem;
+				background-color: initial;
 				
-				margin: 0;
 			}
-			.mui-pull-top-wrapper .mui-icon,
-			.mui-pull-top-wrapper .mui-spinner {
-				margin-top: 0.109375rem;
+			.logo
+			{
+				width:3.5rem;
+				position: relative;
+				top:0.75rem;
+				left:0.42rem;
+				background-color:initial;
+			} 
+			.search
+			{
+				width:5.2rem;
+				height:0.8rem;
+				position: absolute;
+				top:0.9rem;
+				left:4.25rem;
+				border-radius:0.12rem;
+				background-color:rgb(246,245,244);
 			}
-			.mui-pull-top-wrapper .mui-icon.mui-reverse {
-				/*-webkit-transform: rotate(180deg) translateZ(0);*/
+			.search img
+			{
+				width:0.45rem;
+				position: absolute;
+				top:0.2rem;
+				left:0.2rem;
+				background-color: initial;
 			}
-			.mui-pull-bottom-tips {/*底部刷新字体*/
-				text-align: center;
-				background-color:rgb(255,255,255);
-				font-size:0.46875rem; 
-				line-height: 0.625rem;
-				color: #777;
+			.search span
+			{
+				font-size: 0.42rem;
+				background-color: initial;
+				position:relative;top:0.145rem;left:0.8051rem;
+				color: darkgray;
 			}
-			.mui-pull-top-canvas {
-				overflow: hidden;
-				background-color:rgb(255,255,255);
-				border-radius: 0.625rem;
-				width: 0.78125rem;/**/
-				height:0.78125rem;/**/
-				margin: 0 auto;
+		/*上面的滚动导航条*/
+		
+			#slider
+			{
+				top:2.03rem!important;
 			}
-			.mui-pull-top-canvas canvas {
-				width: 0.78125rem;/**/
-			}
-			.mui-slider-indicator.mui-segmented-control {
+			#sliderSegmentedControl
+			{
+				top:0rem!important;
+				height:1.1rem!important; /**/
 				background-color: rgb(255, 255, 255);
+			}
+			.mui-scroll-wrapper
+			{
+				border-bottom: 0.015 rem solid rgb(167,167,170)!important;
+			}							   /**/
+			#itemsWrap                     /**/
+			{                             /**/
+				height:1.1rem!important;/**/
+				font-size:0.48rem!important;
+				background-color: initial;
+			}
+			.mui-control-item
+			{
+				font-size:0.48rem!important;
+				padding-left:0.421rem!important;
+				padding-right:0rem!important;
+				height:0.80515rem!important;
+				line-height:1.09rem!important;
 			}
 		</style>
 	</head>
 
 	<body>
 		<header id="header" class="header">
-			<img id="logo" class="logo" src="../imgs/qcxylogo.png" /> 
-			<form action="" method="post" class="search-box">
-				<img src="../imgs/search.png" /> 
-				<input type="input" value=""/>
-			</form>
+			<img id="logo" class="logo" src="../imgs/qcxylogo.png" />
+			<div class="search">
+				<img src="../imgs/search.png"/>
+				<span>搜你想搜的</span>
+			</div>
 		</header>
 		<div class="mui-content">
 			<div id="slider" class="mui-slider mui-fullscreen">
@@ -136,7 +145,7 @@
 		<script>
 			mui.init();
 			var clientWidth=document.documentElement.clientWidth;
-			var header_height=clientWidth/10*(2.01+1.04);
+			var header_height=clientWidth/10*(2.047+1.08);
 			console.log("header_height:"+header_height);		
 			mui.plusReady(function() {
 				var _self = plus.webview.currentWebview();
@@ -144,52 +153,52 @@
 					items: [{
 						id: "pullrefresh_sub-1.html",
 						url: "homeSubpages/pullrefresh_sub-1.html",
-						styles:{top:(header_height/2)+'px'},
+						styles:{top:(header_height/2)+'px',bottom:'0px'},
 						extras: {}
 					}, {
 						id: "pullrefresh_sub-2.html",
 						url: "homeSubpages/pullrefresh_sub-2.html",
-						styles:{top:(header_height/2)+'px'},
+						styles:{top:(header_height/2)+'px',bottom:'0px'},
 						extras: {}
 					}, {
 						id: "pullrefresh_sub-3.html",
 						url: "homeSubpages/pullrefresh_sub-3.html",
-						styles:{top:(header_height/2)+'px'},
+						styles:{top:(header_height/2)+'px',bottom:'0px'},
 						extras: {}
 					}, {
 						id: "pullrefresh_sub-4.html",
 						url: "homeSubpages/pullrefresh_sub-4.html",
-						styles:{top:(header_height/2)+'px'},
+						styles:{top:(header_height/2)+'px',bottom:'0px'},
 						extras: {}
 					}, {
 						id: "pullrefresh_sub-5.html",
 						url: "homeSubpages/pullrefresh_sub-5.html",
-						styles:{top:(header_height/2)+'px'},
+						styles:{top:(header_height/2)+'px',bottom:'0px'},
 						extras: {}
 					}, {
 						id: "pullrefresh_sub-6.html",
 						url: "homeSubpages/pullrefresh_sub-6.html",
-						styles:{top:(header_height/2)+'px'},
+						styles:{top:(header_height/2)+'px',bottom:'0px'},
 						extras: {}
 					}, {
 						id: "pullrefresh_sub-7.html",
 						url: "homeSubpages/pullrefresh_sub-7.html",
-						styles:{top:(header_height/2)+'px'},
+						styles:{top:(header_height/2)+'px',bottom:'0px'},
 						extras: {}
 					}, {
 						id: "pullrefresh_sub-8.html",
 						url: "homeSubpages/pullrefresh_sub-8.html",
-						styles:{top:(header_height/2)+'px'},
+						styles:{top:(header_height/2)+'px',bottom:'0px'},
 						extras: {}
 					}, {
 						id: "pullrefresh_sub-9.html",
 						url: "homeSubpages/pullrefresh_sub-9.html",
-						styles:{top:(header_height/2)+'px'},
+						styles:{top:(header_height/2)+'px',bottom:'0px'},
 						extras: {}
 					}, {
 						id: "pullrefresh_sub-10.html",
 						url: "homeSubpages/pullrefresh_sub-10.html",
-						styles:{top:(header_height/2)+'px'},
+						styles:{top:(header_height/2)+'px',bottom:'0px'},
 						extras: {}
 					}],
 					onChange: function(obj) {
@@ -208,7 +217,9 @@
 					var wid = this.getAttribute("data-wid");
 					group.switchTab(wid);
 				});
-
+				mui('.header').on("tap", ".search", function(e) {
+					mui.openWindow('search.html','search.html',{})
+				});
 			});
 			mui.back = function() {
 				var _self = plus.webview.currentWebview();

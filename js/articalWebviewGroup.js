@@ -28,24 +28,19 @@ proto._initParent = function() {
 	}
 };
 	var clientWidth=document.documentElement.clientWidth;
-	console.log("clientWidth:"+clientWidth);
 	var clientHeight=document.documentElement.clientHeight+100;//不清楚为什么要加100
-	console.log("clientHeight:"+clientHeight);
-	var header_height=clientWidth/10*(2.1+1.07);
-	console.log("header_height:"+header_height);
-	var nav_bottom_height=clientWidth/10*1.50;
-	console.log("nav_bottom_height:"+nav_bottom_height);
-	var height=clientHeight-(header_height+nav_bottom_height);
-	console.log("height:"+height);
+	var header_height=clientWidth/10*(2.047+1.08);
+	var nav_bottom_height=clientWidth/10*1.3768;
+	console.log(header_height/2);
 proto._initNativeView = function() { 
 	// fixed by wmy 因为沉浸式应用，需要额外加上状态栏高度
 	var statusbar_H = plus.navigator.getStatusbarHeight();
 	this.nativeView = new plus.nativeObj.View('__MUI_TAB_NATIVE', {
-		'top':(header_height/2)+'px', //这个需要根据顶部导航及顶部选项卡高度自动调整
-		'height':(height/2)+'px',
+		'top':(header_height*1.5)+'px', //这个需要根据顶部导航及顶部选项卡高度自动调整
+		'bottom':(nav_bottom_height/2)+'px',
 		'left': '100%',
 		'width': '100%',
-		"backgroundColor":"rgb(255,255,255)" 
+		"backgroundColor":"rgb(255, 255, 255)" 
 	});
 	this.nativeView.show();
 };

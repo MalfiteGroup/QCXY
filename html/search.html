@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			*{background-color: white;font-family: "黑体";margin: 0;padding: 0;}
+			#header
+			{
+				border-bottom: 0.03rem solid rgb(232,232,232);
+				height: 2rem;
+			}
+			#cancel
+			{
+				font-size: 0.525rem;
+				position: relative;
+				top:1.165rem;
+				left:8.5rem;
+				color: rgb(42,144,215);
+				font-weight: 650;
+			}
+			form
+			{
+				position: absolute;
+			}
+			form img
+			{
+				width: 0.47rem;
+				background-color: initial;
+				position: absolute;z-index: 6;
+				top:1.08rem;
+				left: 0.72rem;
+			}
+			#search
+			{
+				position: relative;top:0.85rem;left:0.48rem;
+				height:0.9rem;
+				background-color:rgb(246,245,244);
+				width:7.5rem;
+				margin: 0;
+				padding: 0;
+				border-radius:0.12rem;
+				border:0.008rem solid gainsboro;
+				padding-left: 0.9rem;
+				font-size: 0.45rem;
+			}
+			#search::-webkit-input-placeholder 
+			{
+				/* placeholder字体大小  */
+				font-size:0.45rem;
+				/* placeholder位置  */
+				text-align:left;
+				line-height:0.6rem;
+			}
+			#recommend span
+			{
+				display: block;
+				height: 1.2rem;
+				font-size: 0.45rem;
+				letter-spacing:0rem;
+				line-height: 1.29rem;
+				color: darkgray;
+				padding-left: 0.4669rem;
+			}
+			table
+			{
+				width:10rem;
+				border-top: 0.03rem solid rgb(232,232,232);
+				border-bottom: 0.03rem solid rgb(232,232,232);
+			}
+			table td
+			{
+				width:50%;
+				height: 1.1867rem;
+				font-size: 0.43rem;
+				color: black;
+				letter-spacing:-0.02rem;
+				padding-left: 0.4025rem;
+				padding-top:0.08rem;
+				border-bottom: 0.03rem solid rgb(232,232,232);				
+			}
+			table td:active
+			{
+				background-color: gainsboro;			
+			}
+			table .right
+			{
+				border-left: 0.03rem solid rgb(232,232,232);	
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div id="header">
+			<form action="" method="post">
+				<img src="../imgs/search.png"/>
+				<input id="search" type="text" value="" placeholder="请输入关键字"/>
+			</form>
+			<span id="cancel" class="mui-action-back">
+				取消
+			</span>
+		</div>
+		<div id="recommend">
+			<span>推荐</span>
+			<table>
+				<tr><td onclick="changetext(this)">发财中国年</td>		<td class="right" onclick="changetext(this)">朝韩关系</td></tr>
+				<tr><td onclick="changetext(this)">香港巴士翻倒</td>		<td class="right" onclick="changetext(this)">绝地求生</td></tr>
+				<tr><td onclick="changetext(this)">套路妹子</td>    		<td class="right" onclick="changetext(this)">表面朋友</td></tr>
+				<tr><td onclick="changetext(this)">公司不发年终奖</td>	<td class="right" onclick="changetext(this)">迫击炮失误</td></tr>
+				<tr><td onclick="changetext(this)">拍照技巧</td>			<td class="right" onclick="changetext(this)">猫砂测试</td></tr>
+				<tr><td onclick="changetext(this)">职业素养</td>			<td class="right" onclick="changetext(this)">你不是一个人</td></tr>
+				<tr><td onclick="changetext(this)">非洲牛人</td>			<td class="right" onclick="changetext(this)">冬奥会</td></tr>
+				<tr><td onclick="changetext(this)">两姐妹相撞</td>		<td class="right" onclick="changetext(this)">英雄联盟</td></tr>
+			</table>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/zishiying.js"></script>
+		<script src="../js/jquery-3.2.1.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			function changetext(id)
+			{
+				document.getElementById('search').value=id.innerHTML;
+			}
+			document.addEventListener("plusready",function(){
+			var curWebview=plus.webview.currentWebview();
+			curWebview.setStyle({bounce:"vertical"});
+			},false);
+		</script>
+	</body>
+
+</html>
