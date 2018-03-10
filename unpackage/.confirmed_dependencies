@@ -1,19 +1,69 @@
 {
-  "index.html": {
-    "refer": [
-      "html/content.html",
-      "html/hot.html",
-      "html/user.html",
-      "html/column.html",
-      "html/index.html"
-    ],
-    "resources": [
-      "html/index.html"
-    ]
-  },
-  "html/index.html": {
-    "refer": [
-      "html/content.html"
-    ]
-  }
+	"index.html": {
+		"refer": [
+			"html/content.html",
+			"html/hot.html",
+			"html/user.html",
+			"html/column.html",
+			"html/index.html",
+			"html/home.html"
+		],
+		"resources": [
+			"html/index.html",
+			"html/home.html"
+		]
+	},
+	"html/index.html": {
+		"refer": [
+			"html/content.html"
+		]
+	},
+	"html/articalSubpage.html": {
+		"resources": [
+			"html/articalSubpages/recommend.html"
+		],
+		"refer": [
+			"html/articalSubpages/recommend.html"
+		]
+	},
+	"html/videoSubpage.html": {
+		"resources": [
+			"html/videoSubpages/sub1.html"
+		],
+		"refer": [
+			"html/videoSubpages/sub1.html"
+		]
+	},
+	"html/hot.html": {
+		"resources": [
+			"html/videoSubpage.html"
+		],
+		"refer": [
+			"html/videoSubpage.html"
+		]
+	},
+	"html/user.html": {
+		"resources": [
+			"imgs/加星收藏.png"
+		]
+	},
+	"html/home.html": {
+		"resources": [
+			"html/homeSubpages/pullrefresh_sub-1.html"
+		],
+		"refer": [
+			"html/homeSubpages/pullrefresh_sub-1.html",
+			"html/homeSubpages/pullrefresh_sub-2.html",
+			"html/homeSubpages/pullrefresh_sub-4.html",
+			"html/homeSubpages/pullrefresh_sub-3.html"
+		]
+	},
+	"html/column.html": {
+		"resources": [
+			"html/articalSubpage.html"
+		],
+		"refer": [
+			"html/articalSubpage.html"
+		]
+	}
 }

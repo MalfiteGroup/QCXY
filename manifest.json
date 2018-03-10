@@ -150,7 +150,8 @@
 		"pages": {
 			"index.html": {
 				"resources": [
-					"html/index.html"
+					"html/index.html",
+					"html/home.html"
 				],
 				"refer": [
 					"html/content.html",
@@ -165,6 +166,52 @@
 				"refer": [
 					"html/content.html"
 				],
+				"priority": 0
+			},
+			"html/articalSubpage.html": {
+				"resources": [
+					"html/articalSubpages/recommend.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/videoSubpage.html": {
+				"resources": [
+					"html/videoSubpages/sub1.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/hot.html": {
+				"resources": [
+					"html/videoSubpage.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/user.html": {
+				"resources": [
+					"imgs/加星收藏.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/home.html": {
+				"resources": [
+					"html/homeSubpages/pullrefresh_sub-1.html"
+				],
+				"refer": [
+					"html/homeSubpages/pullrefresh_sub-2.html",
+					"html/homeSubpages/pullrefresh_sub-4.html",
+					"html/homeSubpages/pullrefresh_sub-3.html"
+				],
+				"priority": 0
+			},
+			"html/column.html": {
+				"resources": [
+					"html/articalSubpage.html"
+				],
+				"refer": [],
 				"priority": 0
 			}
 		},

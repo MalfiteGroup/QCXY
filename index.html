@@ -122,16 +122,6 @@
 			var originUrl = 'index.png';
 			//选项卡点击事件
 			mui('.mui-bar-tab').on('tap', 'a', function(e) {
-				mui.ajax('http://125.90.88.9/ios/index.php', {
-					data: {
-						type: 'initialize'
-					},
-					dataType: 'text', //服务器返回数据格式
-					type: 'get', //HTTP请求类型
-					success: function(data) {
-						mui.toast(data)
-					}
-				});
 				var targetTab = this.getAttribute('href');
 				if(targetTab == activeTab) {
 					return;
